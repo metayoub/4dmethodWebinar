@@ -1,0 +1,197 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [
+			{
+				"id": "taskIDs",
+				"type": "scalar",
+				"namespace": "",
+				"dataType": "object",
+				"initialValue": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "Task",
+						"events": [
+							"onChange"
+						],
+						"id": "kanbanTaskIdsOnChange",
+						"method": "ds.Task.getByIds",
+						"params": [
+							{
+								"name": "ids",
+								"type": "Collection",
+								"datasource": "taskIDs",
+								"id": "kanbanTaskIdsParam"
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "cs.TaskSelection",
+							"datasource": "tasks"
+						}
+					}
+				]
+			},
+			{
+				"id": "tasks",
+				"type": "entitysel",
+				"dataclass": "Task",
+				"initialValue": "",
+				"depth": null,
+				"pageSize": 100
+			}
+		],
+		"styles": []
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
+							"oninit"
+						],
+						"id": "nWn3oyWsQq6XRt3YCgBVeh",
+						"method": "ds.authentify",
+						"params": [],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "Boolean"
+						},
+						"disabled": true
+					}
+				],
+				"airyMode": false,
+				"className": "bg-white h-full w-full px-6",
+				"style": {
+					"paddingLeft": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"lzcdfy75_k"
+			],
+			"linkedNodes": {}
+		},
+		"lzcdfy75_k": {
+			"type": {
+				"resolvedName": "KanbanBoard"
+			},
+			"isCanvas": false,
+			"props": {
+				"name": "",
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "Task",
+						"events": [
+							"onCardMove"
+						],
+						"id": "vp8HQ7Hg9zcGCP377Kusyu",
+						"method": "ds.Task.moveCard",
+						"params": [],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						}
+					}
+				],
+				"iterable": true,
+				"style": {
+					"minHeight": "320px",
+					"width": "100%",
+					"height": "100%"
+				},
+				"idAttr": "ID",
+				"titleAttr": "Title",
+				"statusAttr": "StatusString",
+				"categoryAttr": "categoryName",
+				"categoryColorAttr": "categoryColor",
+				"dueDateAttr": "DueDate",
+				"columns": "",
+				"columnWidth": 280,
+				"cardGap": 12,
+				"cardRadius": 8,
+				"dateLocale": "en-US",
+				"showDueBadge": true,
+				"emptyMessage": "No tasks yet. Connect a Task entity selection to load the board.",
+				"columnBg": "#f3f4f6",
+				"cardBg": "#ffffff",
+				"cardBorderColor": "#e5e7eb",
+				"dueBadgeColor": "#6b7280",
+				"dueBadgeOverdueColor": "#ef4444",
+				"dropHighlightColor": "#c7d2fe",
+				"datasource": "tasks",
+				"statusColumns": [
+					{
+						"status": "Not Started",
+						"id": "gzMKGEMBnCXW4MmxhmuhsP"
+					},
+					{
+						"status": "To Do"
+					},
+					{
+						"status": "In Progress"
+					},
+					{
+						"status": "Completed",
+						"id": "xqaP6ug1c6RAqwDyQYnE3c"
+					}
+				],
+				"locale": "en-US",
+				"accentColor": "#6E56CF",
+				"surfaceColor": "#F7F6F9",
+				"textColor": "#23202E",
+				"mutedColor": "#6F6B7D",
+				"cornerRadius": 14,
+				"categoryColors": [
+					{
+						"category": "Content",
+						"color": "#6E56CF"
+					},
+					{
+						"category": "Data",
+						"color": "#12B886"
+					},
+					{
+						"category": "Design",
+						"color": "#F59F00"
+					},
+					{
+						"category": "Ops",
+						"color": "#228BE6"
+					}
+				],
+				"showCategoryChips": true,
+				"showDueDates": true
+			},
+			"displayName": "Kanban Board",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
+}

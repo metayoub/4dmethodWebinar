@@ -1,0 +1,174 @@
+{
+	"destination": "detailScreen",
+	"windowMinWidth": 620,
+	"windowMinHeight": 685,
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"css": {
+		"$ref": "/LOGS/theme/theme.json#/css1"
+	},
+	"events": [
+		"onLoad",
+		"onTimer"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "US Letter",
+		"paperWidth": "792pt",
+		"paperHeight": "611pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 620,
+					"height": 683,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "transparent",
+					"class": "accentBackColor4"
+				},
+				"deleteButton": {
+					"type": "button",
+					"top": 644,
+					"left": 8,
+					"width": 90,
+					"height": 24,
+					"sizingY": "move",
+					"class": "default",
+					"focusable": false,
+					"text": "Delete",
+					"iconFrames": 4,
+					"style": "regular",
+					"method": "ObjectMethods/deleteButton.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"cancelButton": {
+					"type": "button",
+					"top": 644,
+					"left": 513,
+					"width": 90,
+					"height": 24,
+					"sizingY": "move",
+					"class": "default",
+					"focusable": false,
+					"text": "Cancel",
+					"iconFrames": 4,
+					"style": "regular",
+					"method": "ObjectMethods/cancelButton.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"saveButton": {
+					"type": "button",
+					"top": 644,
+					"left": 411,
+					"width": 90,
+					"height": 24,
+					"sizingY": "move",
+					"class": "default",
+					"focusable": false,
+					"text": "Save",
+					"iconFrames": 4,
+					"style": "regular",
+					"method": "ObjectMethods/saveButton.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 620,
+					"height": 40,
+					"sizingX": "grow",
+					"stroke": "transparent",
+					"class": "accentBackColor3"
+				},
+				"prevButton": {
+					"type": "button",
+					"top": 5,
+					"left": 517,
+					"width": 44,
+					"height": 31,
+					"sizingX": "move",
+					"focusable": false,
+					"text": "PREV",
+					"iconFrames": 4,
+					"style": "toolbar",
+					"method": "ObjectMethods/prevButton.4dm",
+					"events": [
+						"onClick"
+					],
+					"class": "accentColor3 fontSmall"
+				},
+				"nextButton": {
+					"type": "button",
+					"top": 5,
+					"left": 566,
+					"width": 44,
+					"height": 31,
+					"sizingX": "move",
+					"focusable": false,
+					"text": "NEXT",
+					"iconFrames": 4,
+					"style": "toolbar",
+					"method": "ObjectMethods/nextButton.4dm",
+					"events": [
+						"onClick"
+					],
+					"class": "accentColor3 fontSmall"
+				},
+				"DetailWA": {
+					"type": "webArea",
+					"top": 47,
+					"left": 8,
+					"width": 602,
+					"height": 588,
+					"urlSource": "DetailWA_url",
+					"progressSource": "DetailWA_progress",
+					"contextMenu": "none",
+					"dataSource": "DetailWA",
+					"method": "ObjectMethods/DetailWA.4dm",
+					"webEngine": "embedded",
+					"methodsAccessibility": "all",
+					"events": [
+						"onLoad",
+						"onEndURLLoading"
+					]
+				}
+			},
+			"entryOrder": [
+				"DetailWA"
+			]
+		}
+	],
+	"geometryStamp": 160,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

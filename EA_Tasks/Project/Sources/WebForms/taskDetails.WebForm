@@ -1,0 +1,187 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [
+			{
+				"id": "ID",
+				"type": "scalar",
+				"namespace": "",
+				"dataType": "number",
+				"initialValue": 0,
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "Task",
+						"events": [
+							"onChange"
+						],
+						"id": "cWPoJJVHHMjjmq4V7pnS6L",
+						"method": "ds.Task.getById",
+						"params": [
+							{
+								"name": "id",
+								"type": "Integer",
+								"datasource": "ID",
+								"id": "aVApb3gaeAp7HUUowuKgh7"
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "cs.TaskEntity",
+							"datasource": "task"
+						}
+					}
+				]
+			},
+			{
+				"id": "task",
+				"type": "entity",
+				"dataclass": "Task",
+				"initialValue": "",
+				"depth": null
+			}
+		],
+		"styles": []
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"airyMode": false,
+				"className": "bg-white h-full w-full px-6",
+				"style": {
+					"paddingLeft": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"display": "flex",
+					"flexDirection": "column",
+					"gap": "10px"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"UAvnPiUNzt",
+				"N70S6IuLpq"
+			],
+			"linkedNodes": {}
+		},
+		"N70S6IuLpq": {
+			"type": {
+				"resolvedName": "RichTextEditor"
+			},
+			"isCanvas": false,
+			"props": {
+				"name": "",
+				"classNames": [],
+				"events": [
+					{
+						"type": "qodly-pro-action",
+						"id": "sUUKbewBHy4zxtDq74G7Mz",
+						"events": [
+							"onchange"
+						],
+						"actionType": "4d-method",
+						"action": "",
+						"method": "updateDescription",
+						"params": [
+							{
+								"id": "9LZ29L4Buu9a4nq9uhjgYu",
+								"type": "variant",
+								"datasource": "task.Description"
+							}
+						]
+					}
+				],
+				"placeholder": "Enter text...",
+				"readOnly": false,
+				"minHeight": "150px",
+				"style": {
+					"minHeight": "150px"
+				},
+				"datasource": "task.Description"
+			},
+			"displayName": "Rich Text Editor",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dhka9vpKqj": {
+			"type": {
+				"resolvedName": "ProgressGauge"
+			},
+			"isCanvas": false,
+			"props": {
+				"name": "",
+				"classNames": [],
+				"events": [
+					{
+						"type": "qodly-pro-action",
+						"id": "sYAGZEHpmZGYWLuGJr3Dre",
+						"events": [
+							"onValueChange"
+						],
+						"actionType": "4d-method",
+						"action": "",
+						"method": "updatePercent",
+						"params": [
+							{
+								"id": "vMjmrYNBY2Lr442wfx5c3G",
+								"type": "variant",
+								"datasource": "task.Percent"
+							}
+						]
+					}
+				],
+				"readOnly": false,
+				"strokeWidth": 14,
+				"style": {
+					"width": "120px",
+					"height": "120px"
+				},
+				"datasource": "task.Percent"
+			},
+			"displayName": "Progress Gauge",
+			"custom": {},
+			"parent": "UAvnPiUNzt",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"UAvnPiUNzt": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"style": {
+					"display": "flex",
+					"alignItems": "center",
+					"justifyContent": "flex-start"
+				}
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"dhka9vpKqj"
+			],
+			"linkedNodes": {}
+		}
+	}
+}

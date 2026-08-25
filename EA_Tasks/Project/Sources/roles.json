@@ -1,0 +1,56 @@
+{
+	"forceLogin": true,
+	"restrictedByDefault": false,
+	"permissions": {
+		"allowed": [
+			{
+				"applyTo": "Task.getById",
+				"type": "method",
+				"execute": [
+					"Administrator"
+				]
+			},
+			{
+				"applyTo": "Task.getByIds",
+				"type": "method",
+				"execute": [
+					"Administrator"
+				]
+			},
+			{
+				"applyTo": "Task",
+				"type": "dataclass",
+				"read": [
+					"Administrator"
+				],
+				"create": [
+					"Administrator"
+				],
+				"update": [
+					"Administrator"
+				],
+				"drop": [
+					"Administrator"
+				],
+				"execute": [
+					"Administrator"
+				]
+			},
+			{
+				"applyTo": "Task.updateDescription",
+				"type": "method",
+				"execute": [
+					"Administrator"
+				]
+			}
+		]
+	},
+	"privileges": [
+		{
+			"id": "56wjJJ73iG5yKeSHPnEGtn",
+			"privilege": "Administrator",
+			"includes": []
+		}
+	],
+	"roles": []
+}

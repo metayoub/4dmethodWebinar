@@ -1,0 +1,1329 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [
+			{
+				"id": "ID",
+				"type": "scalar",
+				"namespace": "",
+				"dataType": "string",
+				"initialValue": "",
+				"events": [
+					{
+						"events": [
+							"onChange"
+						],
+						"id": "evtLoadInvoice01",
+						"method": "ds.INVOICES.getById",
+						"dataclass": "INVOICES",
+						"params": [
+							{
+								"name": "$id",
+								"type": "Text",
+								"datasource": "ID",
+								"id": "prmLoadId01"
+							}
+						],
+						"type": "method",
+						"returns": {
+							"name": "$0",
+							"type": "cs.INVOICESEntity",
+							"datasource": "invoice"
+						}
+					}
+				]
+			},
+			{
+				"id": "invoice",
+				"type": "entity",
+				"dataclass": "INVOICES",
+				"namespace": "",
+				"initialValue": "",
+				"depth": 1
+			},
+			{
+				"id": "products",
+				"type": "entitysel",
+				"dataclass": "PRODUCTS",
+				"initialValue": "all",
+				"depth": null,
+				"pageSize": 100
+			},
+			{
+				"id": "selectedProduct",
+				"type": "entity",
+				"dataclass": "PRODUCTS",
+				"namespace": "",
+				"initialValue": "",
+				"depth": 0,
+				"events": [
+					{
+						"events": [
+							"onChange"
+						],
+						"id": "evtDraftFromProduct01",
+						"type": "method",
+						"dataclass": "INVOICESEntity",
+						"method": "invoice.draftFromProduct",
+						"params": [
+							{
+								"name": "$product",
+								"type": "cs.PRODUCTSEntity",
+								"datasource": "selectedProduct",
+								"id": "prmDraftProduct01"
+							}
+						],
+						"namespace": "",
+						"datasource": "",
+						"returns": {
+							"name": "$0",
+							"type": "Object",
+							"datasource": "lineDraft"
+						}
+					}
+				]
+			},
+			{
+				"id": "lineDraft",
+				"type": "object",
+				"dataType": "object",
+				"namespace": "",
+				"initialValue": {
+					"Quantity": 1,
+					"Unit_Price": 0,
+					"Discount_Rate": 0,
+					"Tax_Rate": 0
+				}
+			}
+		],
+		"styles": []
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
+							"oninit"
+						],
+						"id": "evtAuthInvoice01",
+						"method": "ds.authentify",
+						"params": [],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "Boolean"
+						},
+						"disabled": false
+					},
+					{
+						"events": [
+							"onload"
+						],
+						"id": "evtOnLoadInvoice01",
+						"method": "ds.INVOICES.getById",
+						"dataclass": "INVOICES",
+						"params": [
+							{
+								"name": "$id",
+								"type": "Text",
+								"datasource": "ID",
+								"id": "prmOnLoadId01"
+							}
+						],
+						"type": "method",
+						"returns": {
+							"name": "$0",
+							"type": "cs.INVOICESEntity",
+							"datasource": "invoice"
+						}
+					}
+				],
+				"airyMode": false,
+				"className": "bg-white h-full w-full p-6",
+				"style": {
+					"paddingLeft": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"dFn1DluhAE",
+				"kPuFNyMobR"
+			],
+			"linkedNodes": {}
+		},
+		"dFn1DluhAE": {
+			"type": {
+				"resolvedName": "InvoiceLineGrid"
+			},
+			"isCanvas": false,
+			"props": {
+				"name": "",
+				"classNames": [],
+				"events": [
+					{
+						"type": "qodly-pro-action",
+						"id": "tnLoXxJziLxcpooD1tvrT4",
+						"events": [
+							"setPaid"
+						],
+						"actionType": "4d-method",
+						"action": "",
+						"method": "setPaid",
+						"params": [],
+						"returns": {}
+					},
+					{
+						"type": "method",
+						"dataclass": "INVOICESEntity",
+						"events": [
+							"saveLine"
+						],
+						"id": "4D5YjFSF7F3FzLVSYfdovo",
+						"method": "invoice.saveLine",
+						"params": [],
+						"namespace": "",
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						}
+					},
+					{
+						"type": "method",
+						"dataclass": "INVOICESEntity",
+						"events": [
+							"reorderLines"
+						],
+						"id": "oAHFt1hAfyGBEfnAzaECgW",
+						"method": "invoice.reorderLines",
+						"params": [],
+						"namespace": "",
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						}
+					},
+					{
+						"type": "method",
+						"dataclass": "INVOICESEntity",
+						"events": [
+							"removeLine"
+						],
+						"id": "2zQ6FZS7umtd5q3MFmZuAj",
+						"method": "invoice.removeLine",
+						"params": [],
+						"namespace": "",
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						}
+					},
+					{
+						"type": "method",
+						"dataclass": "INVOICESEntity",
+						"events": [
+							"applyTotals"
+						],
+						"id": "tSpjgnWaCxJHJn7wJjcVxd",
+						"method": "invoice.applyTotals",
+						"params": [
+							{
+								"name": "payload",
+								"type": "Object",
+								"datasource": "",
+								"id": "iwNVFWCV4YwZpqgP6rGrtk"
+							}
+						],
+						"namespace": "",
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						}
+					},
+					{
+						"type": "dialog",
+						"id": "8aqCLXrM9CGfT1xFfGfMyx",
+						"events": [
+							"addLine"
+						],
+						"actionType": "open",
+						"targetDialog": "addLine"
+					}
+				],
+				"style": {
+					"width": "100%",
+					"minHeight": "420px"
+				},
+				"currency": "$",
+				"locale": "us",
+				"readOnly": false,
+				"paid": false,
+				"productsSource": "products",
+				"datasource": "invoice.Lines_Fm_Invoices",
+				"linesRelation": "",
+				"accentColor": "#6E56CF",
+				"surfaceColor": "#FFFFFF",
+				"textColor": "#23202E",
+				"mutedColor": "#6F6B7D",
+				"cornerRadius": 16,
+				"density": "comfortable",
+				"categoryColors": [
+					{
+						"category": "Plume",
+						"color": "#6E56CF"
+					},
+					{
+						"category": "Roller",
+						"color": "#12B886"
+					},
+					{
+						"category": "Multifonction",
+						"color": "#F59F00"
+					}
+				],
+				"showSummary": true,
+				"showChart": true,
+				"showQuantityRing": true,
+				"showCategoryChips": true
+			},
+			"displayName": "Invoice Line Grid",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"kPuFNyMobR": {
+			"type": {
+				"resolvedName": "Dialog"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "INVOICESEntity",
+						"events": [
+							"oninit"
+						],
+						"id": "evtDialogResetDraft01",
+						"method": "invoice.resetLineDraft",
+						"params": [],
+						"namespace": "",
+						"datasource": "",
+						"returns": {
+							"name": "$0",
+							"type": "Object",
+							"datasource": "lineDraft"
+						}
+					},
+					{
+						"type": "simple-action",
+						"id": "evtDialogClearProduct01",
+						"events": [
+							"oninit"
+						],
+						"action": "clear",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "selectedProduct",
+							"type": "entity",
+							"namespace": ""
+						}
+					}
+				],
+				"overlay": true,
+				"closable": true,
+				"serverSideRef": "addLine",
+				"style": {
+					"borderRadius": "16px",
+					"width": "480px",
+					"maxWidth": "92vw"
+				}
+			},
+			"displayName": "Dialog",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"Dialog": "92dFTUDXDM",
+				"close": "dlgCloseIcon01"
+			}
+		},
+		"dlgCloseIcon01": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-solid fa-xmark"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "kPuFNyMobR",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"92dFTUDXDM": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"gap": "16px",
+					"paddingTop": "24px",
+					"paddingRight": "24px",
+					"paddingBottom": "24px",
+					"paddingLeft": "24px",
+					"backgroundColor": "#ffffff",
+					"borderRadius": "16px",
+					"width": "100%"
+				},
+				"iterableChild": true,
+				"classNames": []
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "kPuFNyMobR",
+			"hidden": false,
+			"nodes": [
+				"hhT6glYTdM",
+				"dlgSubtitle01",
+				"dlgProductBlock01",
+				"dlgFieldsGrid01",
+				"dlgActions01"
+			],
+			"linkedNodes": {}
+		},
+		"hhT6glYTdM": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": "Add line",
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false
+							}
+						]
+					}
+				],
+				"datasource": "",
+				"style": {
+					"fontSize": "18px",
+					"fontWeight": "700",
+					"color": "#23202E"
+				}
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "92dFTUDXDM",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgSubtitle01": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": "Select a product and enter the line details.",
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false
+							}
+						]
+					}
+				],
+				"datasource": "",
+				"style": {
+					"fontSize": "14px",
+					"color": "#6F6B7D"
+				}
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "92dFTUDXDM",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgProductBlock01": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"gap": "8px",
+					"width": "100%"
+				},
+				"iterableChild": true,
+				"classNames": []
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "92dFTUDXDM",
+			"hidden": false,
+			"nodes": [
+				"dlgProductLabel01",
+				"dlgSelectBox01"
+			],
+			"linkedNodes": {}
+		},
+		"dlgProductLabel01": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": "Product",
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false
+							}
+						]
+					}
+				],
+				"datasource": "",
+				"style": {
+					"fontSize": "13px",
+					"fontWeight": "600",
+					"color": "#6F6B7D"
+				}
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "dlgProductBlock01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgSelectBox01": {
+			"type": {
+				"resolvedName": "SelectBox"
+			},
+			"isCanvas": false,
+			"props": {
+				"iterable": true,
+				"classNames": [],
+				"events": [],
+				"template": "{{ length }} products",
+				"rowsNumber": 6,
+				"placeholder": "Select a product",
+				"datasource": "products",
+				"currentElement": "selectedProduct",
+				"style": {
+					"height": "44px",
+					"borderRadius": "12px",
+					"width": "100%"
+				}
+			},
+			"displayName": "Select Box",
+			"custom": {},
+			"parent": "dlgProductBlock01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"container": "dlgSelectContainer01"
+			}
+		},
+		"dlgSelectContainer01": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"className": "fd-selectbox__container",
+				"isFixedWidth": true,
+				"iterableChild": true,
+				"style": {
+					"height": "44px",
+					"display": "flex",
+					"alignItems": "center",
+					"gap": "8px",
+					"paddingLeft": "12px",
+					"paddingRight": "12px",
+					"borderRadius": "12px",
+					"borderWidth": "1px",
+					"borderStyle": "solid",
+					"borderColor": "#d1d5db",
+					"backgroundColor": "#ffffff"
+				}
+			},
+			"displayName": "Stylebox",
+			"custom": {
+				"contentHeight": 44
+			},
+			"parent": "dlgSelectBox01",
+			"hidden": false,
+			"nodes": [
+				"dlgSelectRef01",
+				"dlgSelectName01"
+			],
+			"linkedNodes": {}
+		},
+		"dlgSelectRef01": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"type": "datasource",
+								"dsType": "string",
+								"datasource": "$This.Reference",
+								"children": [
+									{
+										"text": "$This.Reference"
+									}
+								]
+							}
+						]
+					}
+				],
+				"iterableChild": true,
+				"classNames": [],
+				"style": {
+					"fontSize": "12px",
+					"fontWeight": "600",
+					"color": "#6E56CF"
+				},
+				"datasource": "$This.Reference"
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "dlgSelectContainer01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgSelectName01": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"type": "datasource",
+								"dsType": "string",
+								"datasource": "$This.Name",
+								"children": [
+									{
+										"text": "$This.Name"
+									}
+								]
+							}
+						]
+					}
+				],
+				"iterableChild": true,
+				"classNames": [],
+				"style": {
+					"fontSize": "14px",
+					"color": "#23202E"
+				},
+				"datasource": "$This.Name"
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "dlgSelectContainer01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgFieldsGrid01": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "grid",
+					"gridTemplateColumns": "1fr 1fr",
+					"gap": "12px",
+					"width": "100%"
+				},
+				"iterableChild": true,
+				"classNames": []
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "92dFTUDXDM",
+			"hidden": false,
+			"nodes": [
+				"dlgQtyInput01",
+				"dlgPriceInput01",
+				"dlgDiscountInput01",
+				"dlgTaxInput01"
+			],
+			"linkedNodes": {}
+		},
+		"dlgQtyInput01": {
+			"type": {
+				"resolvedName": "TextInput"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"placeholder": "Quantity",
+				"label": "Quantity",
+				"labelPosition": "top",
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"alignItems": "stretch",
+					"gap": "8px",
+					"height": "fit-content",
+					"width": "100%"
+				},
+				"classNames": [],
+				"iterableChild": true
+			},
+			"displayName": "Text Input",
+			"custom": {},
+			"parent": "dlgFieldsGrid01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"label": "dlgQtyLabel01",
+				"input": "dlgQtyField01"
+			}
+		},
+		"dlgQtyLabel01": {
+			"type": {
+				"resolvedName": "Label"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Quantity",
+				"classNames": [],
+				"events": [],
+				"moveable": false,
+				"style": {
+					"color": "#6F6B7D",
+					"fontWeight": "600",
+					"fontSize": "13px"
+				},
+				"deletable": true
+			},
+			"displayName": "Label",
+			"custom": {},
+			"parent": "dlgQtyInput01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgQtyField01": {
+			"type": {
+				"resolvedName": "Input"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"deletable": false,
+				"className": "fd-input w-full bg-transparent",
+				"type": "number",
+				"style": {
+					"height": "44px",
+					"borderRadius": "12px",
+					"borderColor": "#d1d5db",
+					"borderWidth": "1px",
+					"borderStyle": "solid",
+					"paddingLeft": "12px",
+					"paddingRight": "12px",
+					"paddingTop": "10px",
+					"paddingBottom": "10px",
+					"backgroundColor": "#ffffff",
+					"fontSize": "14px",
+					"color": "#23202E"
+				},
+				"datasource": "lineDraft.Quantity",
+				"moveable": false,
+				"placeholder": "1",
+				"readonly": false,
+				"classNames": [],
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
+			},
+			"displayName": "Input",
+			"custom": {},
+			"parent": "dlgQtyInput01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgPriceInput01": {
+			"type": {
+				"resolvedName": "TextInput"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"placeholder": "Unit price",
+				"label": "Unit price",
+				"labelPosition": "top",
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"alignItems": "stretch",
+					"gap": "8px",
+					"height": "fit-content",
+					"width": "100%"
+				},
+				"classNames": [],
+				"iterableChild": true
+			},
+			"displayName": "Text Input",
+			"custom": {},
+			"parent": "dlgFieldsGrid01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"label": "dlgPriceLabel01",
+				"input": "dlgPriceField01"
+			}
+		},
+		"dlgPriceLabel01": {
+			"type": {
+				"resolvedName": "Label"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Unit price",
+				"classNames": [],
+				"events": [],
+				"moveable": false,
+				"style": {
+					"color": "#6F6B7D",
+					"fontWeight": "600",
+					"fontSize": "13px"
+				},
+				"deletable": true
+			},
+			"displayName": "Label",
+			"custom": {},
+			"parent": "dlgPriceInput01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgPriceField01": {
+			"type": {
+				"resolvedName": "Input"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"deletable": false,
+				"className": "fd-input w-full bg-transparent",
+				"type": "number",
+				"style": {
+					"height": "44px",
+					"borderRadius": "12px",
+					"borderColor": "#d1d5db",
+					"borderWidth": "1px",
+					"borderStyle": "solid",
+					"paddingLeft": "12px",
+					"paddingRight": "12px",
+					"paddingTop": "10px",
+					"paddingBottom": "10px",
+					"backgroundColor": "#ffffff",
+					"fontSize": "14px",
+					"color": "#23202E"
+				},
+				"datasource": "lineDraft.Unit_Price",
+				"moveable": false,
+				"placeholder": "0",
+				"readonly": false,
+				"classNames": [],
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
+			},
+			"displayName": "Input",
+			"custom": {},
+			"parent": "dlgPriceInput01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgDiscountInput01": {
+			"type": {
+				"resolvedName": "TextInput"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"placeholder": "Discount %",
+				"label": "Discount %",
+				"labelPosition": "top",
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"alignItems": "stretch",
+					"gap": "8px",
+					"height": "fit-content",
+					"width": "100%"
+				},
+				"classNames": [],
+				"iterableChild": true
+			},
+			"displayName": "Text Input",
+			"custom": {},
+			"parent": "dlgFieldsGrid01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"label": "dlgDiscountLabel01",
+				"input": "dlgDiscountField01"
+			}
+		},
+		"dlgDiscountLabel01": {
+			"type": {
+				"resolvedName": "Label"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Discount %",
+				"classNames": [],
+				"events": [],
+				"moveable": false,
+				"style": {
+					"color": "#6F6B7D",
+					"fontWeight": "600",
+					"fontSize": "13px"
+				},
+				"deletable": true
+			},
+			"displayName": "Label",
+			"custom": {},
+			"parent": "dlgDiscountInput01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgDiscountField01": {
+			"type": {
+				"resolvedName": "Input"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"deletable": false,
+				"className": "fd-input w-full bg-transparent",
+				"type": "number",
+				"style": {
+					"height": "44px",
+					"borderRadius": "12px",
+					"borderColor": "#d1d5db",
+					"borderWidth": "1px",
+					"borderStyle": "solid",
+					"paddingLeft": "12px",
+					"paddingRight": "12px",
+					"paddingTop": "10px",
+					"paddingBottom": "10px",
+					"backgroundColor": "#ffffff",
+					"fontSize": "14px",
+					"color": "#23202E"
+				},
+				"datasource": "lineDraft.Discount_Rate",
+				"moveable": false,
+				"placeholder": "0",
+				"readonly": false,
+				"classNames": [],
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
+			},
+			"displayName": "Input",
+			"custom": {},
+			"parent": "dlgDiscountInput01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgTaxInput01": {
+			"type": {
+				"resolvedName": "TextInput"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"placeholder": "Tax %",
+				"label": "Tax %",
+				"labelPosition": "top",
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"alignItems": "stretch",
+					"gap": "8px",
+					"height": "fit-content",
+					"width": "100%"
+				},
+				"classNames": [],
+				"iterableChild": true
+			},
+			"displayName": "Text Input",
+			"custom": {},
+			"parent": "dlgFieldsGrid01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"label": "dlgTaxLabel01",
+				"input": "dlgTaxField01"
+			}
+		},
+		"dlgTaxLabel01": {
+			"type": {
+				"resolvedName": "Label"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Tax %",
+				"classNames": [],
+				"events": [],
+				"moveable": false,
+				"style": {
+					"color": "#6F6B7D",
+					"fontWeight": "600",
+					"fontSize": "13px"
+				},
+				"deletable": true
+			},
+			"displayName": "Label",
+			"custom": {},
+			"parent": "dlgTaxInput01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgTaxField01": {
+			"type": {
+				"resolvedName": "Input"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"deletable": false,
+				"className": "fd-input w-full bg-transparent",
+				"type": "number",
+				"style": {
+					"height": "44px",
+					"borderRadius": "12px",
+					"borderColor": "#d1d5db",
+					"borderWidth": "1px",
+					"borderStyle": "solid",
+					"paddingLeft": "12px",
+					"paddingRight": "12px",
+					"paddingTop": "10px",
+					"paddingBottom": "10px",
+					"backgroundColor": "#ffffff",
+					"fontSize": "14px",
+					"color": "#23202E"
+				},
+				"datasource": "lineDraft.Tax_Rate",
+				"moveable": false,
+				"placeholder": "0",
+				"readonly": false,
+				"classNames": [],
+				"revealPassword": true,
+				"twentyFourHours": true,
+				"eyePosition": "right"
+			},
+			"displayName": "Input",
+			"custom": {},
+			"parent": "dlgTaxInput01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"dlgActions01": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "row",
+					"gap": "8px",
+					"justifyContent": "flex-end",
+					"marginTop": "8px"
+				},
+				"iterableChild": true,
+				"classNames": []
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "92dFTUDXDM",
+			"hidden": false,
+			"nodes": [
+				"dlgCancelBtn01",
+				"dlgValidateBtn01"
+			],
+			"linkedNodes": {}
+		},
+		"dlgCancelBtn01": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Cancel",
+				"classNames": [],
+				"events": [
+					{
+						"type": "dialog",
+						"id": "evtCancelDialog01",
+						"events": [
+							"onclick"
+						],
+						"actionType": "close",
+						"targetDialog": "addLine"
+					}
+				],
+				"iconPosition": "left",
+				"style": {
+					"display": "flex",
+					"backgroundColor": "#ffffff",
+					"color": "#334155",
+					"borderRadius": "12px",
+					"borderWidth": "1px",
+					"borderStyle": "solid",
+					"borderColor": "#e5e7eb",
+					"paddingTop": "10px",
+					"paddingBottom": "10px",
+					"paddingLeft": "16px",
+					"paddingRight": "16px",
+					"fontSize": "13px",
+					"height": "40px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "dlgActions01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "72sntT0sWI"
+			}
+		},
+		"dlgValidateBtn01": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Validate",
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "INVOICESEntity",
+						"events": [
+							"onclick"
+						],
+						"id": "evtValidateAddLine01",
+						"method": "invoice.addLine",
+						"params": [
+							{
+								"name": "$product",
+								"type": "cs.PRODUCTSEntity",
+								"datasource": "selectedProduct",
+								"id": "prmValidateProduct01"
+							},
+							{
+								"name": "$draft",
+								"type": "Object",
+								"datasource": "lineDraft",
+								"id": "prmValidateDraft01"
+							}
+						],
+						"namespace": "",
+						"datasource": "",
+						"returns": {
+							"name": "$0",
+							"type": "cs.INVOICESEntity",
+							"datasource": "invoice"
+						},
+						"disabled": false
+					},
+					{
+						"type": "dialog",
+						"id": "evtValidateClose01",
+						"events": [
+							"onclick"
+						],
+						"actionType": "close",
+						"targetDialog": "addLine"
+					},
+					{
+						"type": "qodly-pro-action",
+						"id": "kkXbeANwSHNvstqydx96hw",
+						"events": [
+							"onclick"
+						],
+						"actionType": "4d-method",
+						"action": "",
+						"method": "reloadInvoice",
+						"params": [
+							{
+								"id": "6DCaZEAjwg3YNcUcVcV1UL",
+								"type": "variant",
+								"datasource": "invoice.ID"
+							}
+						]
+					}
+				],
+				"iconPosition": "left",
+				"style": {
+					"display": "flex",
+					"backgroundColor": "#6E56CF",
+					"color": "#ffffff",
+					"borderRadius": "12px",
+					"borderWidth": "0px",
+					"paddingTop": "10px",
+					"paddingBottom": "10px",
+					"paddingLeft": "16px",
+					"paddingRight": "16px",
+					"fontSize": "13px",
+					"fontWeight": "600",
+					"height": "40px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "dlgActions01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "n3iPPilwMc"
+			}
+		},
+		"72sntT0sWI": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": []
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "dlgCancelBtn01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"n3iPPilwMc": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": []
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "dlgValidateBtn01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
+}

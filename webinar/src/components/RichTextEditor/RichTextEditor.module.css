@@ -1,0 +1,149 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d4d0dc;
+  border-radius: 8px;
+  background: #fff;
+  color: #23202e;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  overflow: hidden;
+}
+
+.rootReadOnly {
+  background: #f7f6f9;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #e6e3ec;
+  background: #faf9fb;
+}
+
+.group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 4px;
+  background: #e0dce8;
+}
+
+.btn,
+.select {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: #3a3648;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  font-size: 13px;
+}
+
+.btn:hover:not(:disabled),
+.select:hover:not(:disabled) {
+  background: #efeaf8;
+  border-color: #ddd6eb;
+}
+
+.btn:disabled,
+.select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btnActive {
+  background: #e8e1f5;
+  border-color: #cfc4e6;
+}
+
+.select {
+  height: 28px;
+  padding: 0 6px;
+  font-size: 12px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.surface {
+  position: relative;
+  flex: 1;
+  min-height: inherit;
+}
+
+.editor {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: inherit;
+  padding: 12px 14px;
+  outline: none;
+  font-size: 15px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.editor:empty::before,
+.editorEmpty::before {
+  content: attr(data-placeholder);
+  color: #9a94a8;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+
+.editor :is(h1, h2, h3) {
+  margin: 0.4em 0 0.25em;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.25;
+}
+
+.editor h1 {
+  font-size: 1.55em;
+}
+
+.editor h2 {
+  font-size: 1.3em;
+}
+
+.editor h3 {
+  font-size: 1.12em;
+}
+
+.editor p {
+  margin: 0 0 0.55em;
+}
+
+.editor ul,
+.editor ol {
+  margin: 0.35em 0 0.55em;
+  padding-left: 1.4em;
+}
+
+.editor a {
+  color: #4b3f8f;
+  text-decoration: underline;
+}
+
+.editorReadOnly {
+  cursor: default;
+}

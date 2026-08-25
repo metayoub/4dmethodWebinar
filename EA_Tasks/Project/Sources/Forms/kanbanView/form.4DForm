@@ -1,0 +1,55 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"width": 968,
+	"height": 634,
+	"pages": [
+		null,
+		{
+			"objects": {
+				"kanbanWA": {
+					"type": "webArea",
+					"top": 0,
+					"left": 0,
+					"width": 968,
+					"height": 634,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"urlSource": "kanbanWA_url",
+					"progressSource": "kanbanWA_progress",
+					"contextMenu": "none",
+					"method": "ObjectMethods/kanbanWA.4dm",
+					"webEngine": "embedded",
+					"methodsAccessibility": "all",
+					"events": [
+						"onLoad",
+						"onEndURLLoading"
+					],
+					"dataSource": "kanbanWA"
+				},
+				"Button": {
+					"type": "button",
+					"text": "Button",
+					"top": 615,
+					"left": 130,
+					"width": 123,
+					"height": 29,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button.4dm"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 3
+}

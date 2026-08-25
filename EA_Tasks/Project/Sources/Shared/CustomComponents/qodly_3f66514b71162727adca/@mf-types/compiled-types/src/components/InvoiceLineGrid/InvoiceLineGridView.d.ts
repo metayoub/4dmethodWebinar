@@ -1,0 +1,26 @@
+import type { CategoryColors, Density, EditableLineField, InvoiceLine } from './InvoiceLineGrid.types';
+export type InvoiceLineGridViewProps = {
+    lines: InvoiceLine[];
+    currency: string;
+    locale: string;
+    accentColor: string;
+    surfaceColor: string;
+    textColor: string;
+    mutedColor: string;
+    cornerRadius: number;
+    density: Density;
+    categoryColors?: CategoryColors | string;
+    showSummary: boolean;
+    showChart: boolean;
+    showQuantityRing: boolean;
+    showCategoryChips: boolean;
+    interactive?: boolean;
+    paid?: boolean;
+    onPaidChange?: (value: boolean) => void;
+    onLineFieldChange?: (id: string, field: EditableLineField, value: number) => void;
+    onAddLine?: () => void;
+    onRemoveLine?: (id: string) => void;
+    onReorder?: (orderedIds: string[]) => void;
+};
+declare const InvoiceLineGridView: import("react").MemoExoticComponent<({ lines, currency, locale, accentColor, surfaceColor, textColor, mutedColor, cornerRadius, density, categoryColors, showSummary, showChart, showQuantityRing, showCategoryChips, interactive, paid, onPaidChange, onLineFieldChange, onAddLine, onRemoveLine, onReorder, }: InvoiceLineGridViewProps) => import("react").JSX.Element>;
+export default InvoiceLineGridView;

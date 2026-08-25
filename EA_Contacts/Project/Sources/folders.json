@@ -1,0 +1,60 @@
+{
+	"Contacts": {
+		"groups": [
+			"Forms",
+			"Project Methods",
+			"Tables"
+		]
+	},
+	"Forms": {
+		"forms": [
+			"[Contact]contactInput2",
+			"categoryList",
+			"contactCell",
+			"contactInput",
+			"contactList",
+			"contactManager"
+		]
+	},
+	"Project Methods": {
+		"methods": [
+			"formatContactColumn",
+			"highlightRow",
+			"initializeContactGrid",
+			"loadCategories",
+			"loadContactCells",
+			"loadContactInput",
+			"loadContactManagerController",
+			"loadContacts",
+			"openContactsManager",
+			"authentify",
+			"getOtp",
+			"QodlyIsReady",
+			"scrollToRow",
+			"setQodlySource"
+		]
+	},
+	"Splashscreen": {
+		"methods": [
+			"_openSplashScreen"
+		],
+		"forms": [
+			"splashScreen"
+		]
+	},
+	"Tables": {
+		"tables": [
+			"Category",
+			"Contact"
+		]
+	},
+	"Unused": {
+		"forms": [
+			"[Category]Input",
+			"[Category]Output",
+			"[Contact]Input",
+			"[Contact]Output"
+		]
+	},
+	"trash": {}
+}

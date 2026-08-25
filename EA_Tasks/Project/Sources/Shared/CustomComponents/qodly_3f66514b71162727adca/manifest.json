@@ -1,0 +1,12 @@
+{
+  "name": "webinar",
+  "version": "0.0.0",
+  "scope": "qodly_3f66514b71162727adca",
+  "author": {
+    "name": "Qodly Team",
+    "email": "contact@qodly.com",
+    "url": "https://qodly.com"
+  },
+  "module": "components",
+  "remoteEntryFileName": "components.js"
+}

@@ -1,0 +1,206 @@
+.board {
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--kb-gap, 16px);
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  padding: var(--kb-pad, 16px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(110, 86, 207, 0.06), transparent 55%),
+    radial-gradient(90% 70% at 100% 100%, rgba(18, 184, 134, 0.05), transparent 50%),
+    var(--kb-surface, #f7f6f9);
+  color: var(--kb-text, #23202e);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 320px;
+  border-radius: var(--kb-radius, 14px);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(35, 32, 46, 0.08);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.columnDropTarget {
+  border-color: color-mix(in srgb, var(--kb-accent, #6e56cf) 55%, transparent);
+  background: color-mix(in srgb, var(--kb-accent, #6e56cf) 8%, white);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--kb-accent, #6e56cf) 25%, transparent);
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 14px 10px;
+}
+
+.columnTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  color: var(--kb-text, #23202e);
+}
+
+.columnCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(35, 32, 46, 0.06);
+  color: var(--kb-muted, #6f6b7d);
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.columnBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-height: 120px;
+  padding: 0 10px 12px;
+  overflow-y: auto;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border-radius: calc(var(--kb-radius, 14px) - 4px);
+  background: #fff;
+  border: 1px solid rgba(35, 32, 46, 0.08);
+  box-shadow: 0 1px 2px rgba(35, 32, 46, 0.04);
+  cursor: grab;
+  user-select: none;
+  transition:
+    transform 140ms ease,
+    opacity 140ms ease,
+    box-shadow 140ms ease,
+    border-color 140ms ease;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.cardDragging {
+  opacity: 0.45;
+  transform: scale(0.98);
+}
+
+.cardInteractive:hover {
+  border-color: color-mix(in srgb, var(--kb-accent, #6e56cf) 35%, transparent);
+  box-shadow: 0 4px 14px rgba(35, 32, 46, 0.08);
+}
+
+.cardStatic {
+  cursor: default;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--kb-text, #23202e);
+  word-break: break-word;
+}
+
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 3px 8px 3px 6px;
+  border-radius: 999px;
+  background: rgba(35, 32, 46, 0.04);
+  color: var(--kb-muted, #6f6b7d);
+  font-size: 11px;
+  font-weight: 550;
+  line-height: 1.2;
+}
+
+.chipDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chipLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.due {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(35, 32, 46, 0.04);
+  color: var(--kb-muted, #6f6b7d);
+  font-size: 11px;
+  font-weight: 550;
+  font-variant-numeric: tabular-nums;
+}
+
+.dueSoon {
+  background: rgba(245, 159, 0, 0.12);
+  color: #b76e00;
+}
+
+.dueOverdue {
+  background: rgba(240, 62, 62, 0.12);
+  color: #c92a2a;
+}
+
+.emptyColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  padding: 12px;
+  border: 1px dashed rgba(35, 32, 46, 0.12);
+  border-radius: calc(var(--kb-radius, 14px) - 4px);
+  color: var(--kb-muted, #6f6b7d);
+  font-size: 12px;
+  text-align: center;
+}
+
+.emptyBoard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  color: var(--kb-muted, #6f6b7d);
+  font-size: 14px;
+}

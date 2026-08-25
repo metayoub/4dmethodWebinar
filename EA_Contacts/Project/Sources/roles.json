@@ -1,0 +1,87 @@
+{
+	"forceLogin": true,
+	"restrictedByDefault": false,
+	"permissions": {
+		"allowed": [
+			{
+				"applyTo": "Contact.getById",
+				"type": "method",
+				"execute": [
+					"Administrator"
+				]
+			},
+			{
+				"applyTo": "Contact.getShareURL",
+				"type": "method",
+				"execute": [
+					"Administrator"
+				]
+			},
+			{
+				"applyTo": "Contact",
+				"type": "dataclass",
+				"read": [
+					"Administrator"
+				],
+				"create": [
+					"Administrator"
+				],
+				"update": [
+					"Administrator"
+				],
+				"drop": [
+					"Administrator"
+				],
+				"execute": [
+					"Administrator"
+				]
+			},
+			{
+				"applyTo": "Category",
+				"type": "dataclass",
+				"read": [
+					"Administrator"
+				],
+				"create": [
+					"Administrator"
+				],
+				"update": [
+					"Administrator"
+				],
+				"drop": [
+					"Administrator"
+				],
+				"execute": [
+					"Administrator"
+				]
+			},
+			{
+				"applyTo": "ds",
+				"type": "datastore",
+				"read": [
+					"Administrator"
+				],
+				"create": [
+					"Administrator"
+				],
+				"update": [
+					"Administrator"
+				],
+				"drop": [
+					"Administrator"
+				],
+				"execute": [
+					"Administrator"
+				]
+			}
+		]
+	},
+	"privileges": [
+		{
+			"id": "contactAdminPriv01",
+			"privilege": "Administrator",
+			"includes": []
+		}
+	],
+	"roles": []
+}

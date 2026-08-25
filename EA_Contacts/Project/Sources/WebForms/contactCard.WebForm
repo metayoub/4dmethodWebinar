@@ -1,0 +1,119 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [
+			{
+				"id": "ID",
+				"type": "scalar",
+				"namespace": "",
+				"dataType": "number",
+				"initialValue": 0,
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "Contact",
+						"events": [
+							"onChange"
+						],
+						"id": "evtLoadContactCard01",
+						"method": "ds.Contact.getById",
+						"params": [
+							{
+								"name": "id",
+								"type": "Integer",
+								"datasource": "ID",
+								"id": "prmLoadIdCard01"
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "cs.ContactEntity",
+							"datasource": "contact"
+						}
+					}
+				]
+			},
+			{
+				"id": "contact",
+				"type": "entity",
+				"dataclass": "Contact",
+				"initialValue": "",
+				"depth": null
+			}
+		],
+		"styles": []
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"airyMode": false,
+				"className": "bg-white h-full w-full px-6",
+				"style": {
+					"paddingLeft": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"EyPIx0CpRC"
+			],
+			"linkedNodes": {}
+		},
+		"EyPIx0CpRC": {
+			"type": {
+				"resolvedName": "ContactCard"
+			},
+			"isCanvas": false,
+			"props": {
+				"name": "",
+				"classNames": [],
+				"events": [],
+				"iterable": false,
+				"style": {
+					"width": "100%",
+					"height": "270px"
+				},
+				"nameAttr": "name",
+				"companyAttr": "Organization",
+				"jobTitleAttr": "JobTitle",
+				"emailAttr": "Email",
+				"phoneAttr": "phone",
+				"addressAttr": "address",
+				"photoAttr": "Photo",
+				"buttonLabel": "Add to Contacts",
+				"emptyMessage": "No contact selected. Bind an entity qodlysource to display a card.",
+				"showQr": true,
+				"qrSize": 140,
+				"photoSize": 88,
+				"cardRadius": 16,
+				"accentColor": "#2563eb",
+				"cardBg": "#ffffff",
+				"textColor": "#111827",
+				"mutedColor": "#6b7280",
+				"borderColor": "#f56a7fff",
+				"datasource": "contact",
+				"surfaceColor": "#FFFFFF",
+				"cornerRadius": 20
+			},
+			"displayName": "Contact Card",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
+}

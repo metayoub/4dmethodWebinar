@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="7">
+	<com.4d>
+		<deployment>
+			<options/>
+		</deployment>
+		<interface>
+			<developper display_toolbar="false"/>
+			<user splash_screen="false"/>
+		</interface>
+		<compiler>
+			<options compilation_path="3"/>
+		</compiler>
+		<general startup_environnement="1"/>
+		<web>
+			<standalone_server>
+				<rest launch_at_startup="true"/>
+				<qodlystudio enabled="true"/>
+				<configuration publish_at_startup="true" session_mode="1"/>
+			</standalone_server>
+		</web>
+	</com.4d>
+</preferences>
