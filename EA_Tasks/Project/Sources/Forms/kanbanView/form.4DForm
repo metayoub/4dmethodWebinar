@@ -51,5 +51,6 @@
 		"version": "1",
 		"kind": "form"
 	},
-	"geometryStamp": 3
+	"geometryStamp": 3,
+	"method": "method.4dm"
 }

@@ -51,6 +51,7 @@ Case of
 			If ($ready)
 				If (Form:C1466.task.ent#Null:C1517)
 					EXECUTE METHOD IN SUBFORM:C1085("task_SF"; "QodlySetSource"; *; "ID"; Form:C1466.task.ent.ID)
+					EXECUTE METHOD IN SUBFORM:C1085("task_SF"; "QodlySetSource"; *; "percent"; Form:C1466.task.ent.Percent)
 				End if 
 				SET TIMER:C645(0)
 			Else 

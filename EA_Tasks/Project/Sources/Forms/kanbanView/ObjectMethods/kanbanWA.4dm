@@ -12,6 +12,7 @@ Case of
 		WA OPEN URL:C1020(*; "kanbanWA"; $url)
 		$context:=ds:C1482.Task
 		WA SET CONTEXT:C1848(*; "kanbanWA"; $context)
+		WA SET PREFERENCE:C1041(*; "kanbanWA"; WA enable Web inspector:K62:7; True)
 		
 	: (Form event code:C388=On End URL Loading:K2:47)
 		CALL SUBFORM CONTAINER:C1086(-3)

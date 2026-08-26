@@ -7,6 +7,7 @@ Case of
 		If (QodlyIsReady)
 			If (Form:C1466.ent#Null:C1517)
 				QodlySetSource("ID"; Form:C1466.ent.ID)
+				QodlySetSource("percent"; Form:C1466.ent.Percent)
 			End if 
 			SET TIMER:C645(0)
 		Else 

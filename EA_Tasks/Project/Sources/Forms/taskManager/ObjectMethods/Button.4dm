@@ -1,0 +1,1 @@
+EXECUTE METHOD IN SUBFORM:C1085("task_SF"; "openWAInspector")

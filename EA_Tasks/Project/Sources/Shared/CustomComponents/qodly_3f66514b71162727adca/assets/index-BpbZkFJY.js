@@ -3,7 +3,7 @@ import { _ as __mf_1 } from './qodly_3f66514b71162727adca__loadShare__react_mf_1
 import { R } from './qodly_3f66514b71162727adca__loadShare__react__loadShare__.js-xqf2XqU7.js';
 import { O as Oi } from './qodly_3f66514b71162727adca__loadShare__react_mf_2_dom__loadShare__.js-DzY4qdT3.js';
 import { _ as __mf_68 } from './qodly_3f66514b71162727adca__loadShare___mf_0_ws_mf_2_ui_mf_1_webform_mf_2_editor__loadShare__.js-BpBweKc3.js';
-import components from './index-CWCYhqq_.js';
+import components from './index-lYzh96lb.js';
 import './preload-helper-CqoC6PUU.js';
 import './qodly_3f66514b71162727adca__loadShare__react__loadShare__.js_commonjs-proxy-CQCMyYyT.js';
 

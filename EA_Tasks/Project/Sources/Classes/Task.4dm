@@ -10,7 +10,7 @@ exposed Function getByIds($ids : Collection) : cs:C1710.TaskSelection
 	return This:C1470.query("ID in :1"; $ids).orderBy("DueDate desc")
 	
 exposed Function moveCard()
-	TRACE:C157
+	
 	var $data : Object:=Web Event:C1734.data
 	// {"taskID":"11","newStatus":"Completed"}
 	var $task : cs:C1710.TaskEntity
@@ -19,6 +19,7 @@ exposed Function moveCard()
 	$info:=$task.save()
 	
 exposed Function updateDescription($description : Text)
+	
 	Form:C1466.ent.Description:=$description
 	
 exposed Function updatePercent($Percent : Integer)

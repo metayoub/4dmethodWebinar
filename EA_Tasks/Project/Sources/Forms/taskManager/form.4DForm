@@ -509,6 +509,18 @@
 					"events": [
 						"onClick"
 					]
+				},
+				"Button": {
+					"type": "button",
+					"text": "Button",
+					"top": 592,
+					"left": 917,
+					"width": 102,
+					"height": 30,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button.4dm"
 				}
 			}
 		}
@@ -561,7 +573,7 @@
 			]
 		}
 	},
-	"geometryStamp": 14,
+	"geometryStamp": 16,
 	"$4d": {
 		"version": "1",
 		"kind": "form"

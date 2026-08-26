@@ -18,6 +18,8 @@ const RichTextEditorRender: FC<IRichTextEditorProps> = (props) => {
   const [value, setValue] = useState('');
   const valueRef = useRef('');
   const writingRef = useRef(false);
+  const persistingRef = useRef(false);
+  const pendingRef = useRef<{ html: string; emitChange: boolean } | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const applyValue = useCallback((next: string) => {
@@ -56,26 +58,49 @@ const RichTextEditorRender: FC<IRichTextEditorProps> = (props) => {
     };
   }, []);
 
+  /** Write datasource first, then emit — so Qodly/4D handlers see the new value. */
   const persist = useCallback(
     async (html: string, emitChange: boolean) => {
-      const cleaned = cleanHtml(html);
-      const changed = cleaned !== valueRef.current;
-      valueRef.current = cleaned;
-      if (changed) setValue(cleaned);
+      const prevPending = pendingRef.current;
+      pendingRef.current = {
+        html,
+        emitChange: Boolean(prevPending?.emitChange || emitChange),
+      };
 
-      if (ds && changed) {
-        writingRef.current = true;
-        try {
-          await ds.setValue(null, cleaned);
-        } finally {
-          queueMicrotask(() => {
-            writingRef.current = false;
-          });
+      if (persistingRef.current) return;
+      persistingRef.current = true;
+
+      try {
+        while (pendingRef.current) {
+          const { html: nextHtml, emitChange: shouldEmit } = pendingRef.current;
+          pendingRef.current = null;
+
+          const cleaned = cleanHtml(nextHtml);
+          if (cleaned === valueRef.current) continue;
+
+          valueRef.current = cleaned;
+          setValue(cleaned);
+
+          if (ds) {
+            writingRef.current = true;
+            try {
+              await ds.setValue(null, cleaned);
+            } finally {
+              writingRef.current = false;
+            }
+          }
+
+          if (shouldEmit) {
+            emit('onChange', { value: cleaned });
+          }
         }
-      }
-
-      if (emitChange && changed) {
-        emit('onChange', { value: cleaned });
+      } finally {
+        persistingRef.current = false;
+        if (pendingRef.current) {
+          const leftover = pendingRef.current;
+          pendingRef.current = null;
+          void persist(leftover.html, leftover.emitChange);
+        }
       }
     },
     [ds, emit],
@@ -83,7 +108,6 @@ const RichTextEditorRender: FC<IRichTextEditorProps> = (props) => {
 
   const handleContentChange = useCallback(
     (html: string) => {
-      valueRef.current = html;
       if (debounceRef.current) clearTimeout(debounceRef.current);
       debounceRef.current = setTimeout(() => {
         void persist(html, true);

@@ -195,11 +195,13 @@ function MdDeleteOutline (props) {
   return GenIcon({"attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0z"}},{"tag":"path","attr":{"d":"M13.17 4L18 8.83V20H6V4h7.17M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-2 12c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm4 3.43c0-.81-.48-1.53-1.22-1.85a6.95 6.95 0 00-5.56 0A2.01 2.01 0 008 17.43V18h8v-.57z"}}]})(props);
 }function MdOutlineDonutLarge (props) {
   return GenIcon({"attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0V0z"}},{"tag":"path","attr":{"d":"M13 5.08A7 7 0 0118.92 11h3.03c-.47-4.72-4.23-8.48-8.95-8.95v3.03zM18.92 13A7 7 0 0113 18.92v3.03c4.72-.47 8.48-4.23 8.95-8.95h-3.03zM11 18.92c-3.39-.49-6-3.4-6-6.92s2.61-6.43 6-6.92V2.05c-5.05.5-9 4.76-9 9.95 0 5.19 3.95 9.45 9 9.95v-3.03z"}}]})(props);
+}function MdOutlineEditNote (props) {
+  return GenIcon({"attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0z"}},{"tag":"path","attr":{"d":"M3 10h11v2H3v-2zm0-2h11V6H3v2zm0 8h7v-2H3v2zm15.01-3.13l.71-.71a.996.996 0 011.41 0l.71.71c.39.39.39 1.02 0 1.41l-.71.71-2.12-2.12zm-.71.71l-5.3 5.3V21h2.12l5.3-5.3-2.12-2.12z"}}]})(props);
 }function MdOutlineTextSnippet (props) {
   return GenIcon({"attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0z"}},{"tag":"path","attr":{"d":"M14.17 5L19 9.83V19H5V5h9.17m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9.83c0-.53-.21-1.04-.59-1.41l-4.83-4.83c-.37-.38-.88-.59-1.41-.59zM7 15h10v2H7v-2zm0-4h10v2H7v-2zm0-4h7v2H7V7z"}}]})(props);
 }
 
-const dataSettings$4 = [
+const dataSettings$5 = [
   {
     key: "datasource",
     label: "Contact",
@@ -288,13 +290,13 @@ const designSettings$2 = [
     defaultValue: 20
   }
 ];
-const commonSettings$4 = [...dataSettings$4, ...fieldSettings, ...designSettings$2];
-const Settings$4 = [
+const commonSettings$5 = [...dataSettings$5, ...fieldSettings, ...designSettings$2];
+const Settings$5 = [
   {
     key: "data",
     label: "Data",
     type: __mf_17.GROUP,
-    components: dataSettings$4
+    components: dataSettings$5
   },
   {
     key: "fields",
@@ -319,8 +321,8 @@ const Settings$4 = [
     "style.textTransform"
   )
 ];
-const BasicSettings$4 = [
-  ...commonSettings$4,
+const BasicSettings$5 = [
+  ...commonSettings$5,
   ...__mf_121(__mf_1).filter(
     "style.overflow",
     "display",
@@ -352,7 +354,7 @@ const DEFAULT_ATTRS = {
   photoAttr: "photo"
 };
 
-const config$4 = {
+const config$5 = {
   craft: {
     displayName: "Contact Card",
     kind: __mf_16.BASIC,
@@ -362,7 +364,7 @@ const config$4 = {
       events: []
     },
     related: {
-      settings: __mf_56(Settings$4, BasicSettings$4)
+      settings: __mf_56(Settings$5, BasicSettings$5)
     },
     sanityCheck: {
       keys: [{ name: "datasource", require: true, isDatasource: true }]
@@ -3416,7 +3418,7 @@ browser.toString = renderCanvas.bind(null, function (data, _, opts) {
   return SvgRenderer.render(data, opts)
 });
 
-const root$2 = "_root_vqkqx_1";
+const root$3 = "_root_vqkqx_1";
 const card$2 = "_card_vqkqx_21";
 const main = "_main_vqkqx_55";
 const identity = "_identity_vqkqx_63";
@@ -3435,8 +3437,8 @@ const qrPanel = "_qrPanel_vqkqx_209";
 const qrImage = "_qrImage_vqkqx_223";
 const qrCaption = "_qrCaption_vqkqx_231";
 const empty$1 = "_empty_vqkqx_240";
-const styles$4 = {
-	root: root$2,
+const styles$5 = {
+	root: root$3,
 	card: card$2,
 	main: main,
 	identity: identity,
@@ -3517,55 +3519,55 @@ const ContactCardView = ({
     "--cc-radius": `${cornerRadius}px`
   };
   if (!hasIdentity) {
-    return /* @__PURE__ */ __mf_1$1("div", { className: cn(styles$4.root, className), style: cssVars, children: /* @__PURE__ */ __mf_1$1("div", { className: styles$4.empty, children: "Bind a contact entity to preview the card." }) });
+    return /* @__PURE__ */ __mf_1$1("div", { className: cn(styles$5.root, className), style: cssVars, children: /* @__PURE__ */ __mf_1$1("div", { className: styles$5.empty, children: "Bind a contact entity to preview the card." }) });
   }
   const showPhoto = Boolean(contact.photo) && !photoFailed;
   const initials = initialsFromName(contact.name || contact.email || "C");
-  return /* @__PURE__ */ __mf_1$1("div", { className: cn(styles$4.root, className), style: cssVars, children: /* @__PURE__ */ __mf_2("article", { className: styles$4.card, "aria-label": contact.name || "Contact card", children: [
-    /* @__PURE__ */ __mf_2("div", { className: styles$4.main, children: [
-      /* @__PURE__ */ __mf_2("div", { className: styles$4.identity, children: [
+  return /* @__PURE__ */ __mf_1$1("div", { className: cn(styles$5.root, className), style: cssVars, children: /* @__PURE__ */ __mf_2("article", { className: styles$5.card, "aria-label": contact.name || "Contact card", children: [
+    /* @__PURE__ */ __mf_2("div", { className: styles$5.main, children: [
+      /* @__PURE__ */ __mf_2("div", { className: styles$5.identity, children: [
         showPhoto ? /* @__PURE__ */ __mf_1$1(
           "img",
           {
-            className: styles$4.avatar,
+            className: styles$5.avatar,
             src: contact.photo,
             alt: contact.name ? `${contact.name} photo` : "Contact photo",
             onError: () => setPhotoFailed(true)
           }
-        ) : /* @__PURE__ */ __mf_1$1("div", { className: cn(styles$4.avatar, styles$4.avatarFallback), "aria-hidden": "true", children: initials }),
-        /* @__PURE__ */ __mf_2("div", { className: styles$4.who, children: [
-          contact.name ? /* @__PURE__ */ __mf_1$1("h2", { className: styles$4.name, children: contact.name }) : null,
-          roleLine ? /* @__PURE__ */ __mf_1$1("p", { className: styles$4.role, children: roleLine }) : null
+        ) : /* @__PURE__ */ __mf_1$1("div", { className: cn(styles$5.avatar, styles$5.avatarFallback), "aria-hidden": "true", children: initials }),
+        /* @__PURE__ */ __mf_2("div", { className: styles$5.who, children: [
+          contact.name ? /* @__PURE__ */ __mf_1$1("h2", { className: styles$5.name, children: contact.name }) : null,
+          roleLine ? /* @__PURE__ */ __mf_1$1("p", { className: styles$5.role, children: roleLine }) : null
         ] })
       ] }),
-      /* @__PURE__ */ __mf_2("ul", { className: styles$4.details, children: [
-        contact.email ? /* @__PURE__ */ __mf_2("li", { className: styles$4.detail, children: [
-          /* @__PURE__ */ __mf_1$1("span", { className: styles$4.detailLabel, children: "Email" }),
-          /* @__PURE__ */ __mf_1$1("p", { className: styles$4.detailValue, children: /* @__PURE__ */ __mf_1$1("a", { href: `mailto:${contact.email}`, children: contact.email }) })
+      /* @__PURE__ */ __mf_2("ul", { className: styles$5.details, children: [
+        contact.email ? /* @__PURE__ */ __mf_2("li", { className: styles$5.detail, children: [
+          /* @__PURE__ */ __mf_1$1("span", { className: styles$5.detailLabel, children: "Email" }),
+          /* @__PURE__ */ __mf_1$1("p", { className: styles$5.detailValue, children: /* @__PURE__ */ __mf_1$1("a", { href: `mailto:${contact.email}`, children: contact.email }) })
         ] }) : null,
-        contact.phone ? /* @__PURE__ */ __mf_2("li", { className: styles$4.detail, children: [
-          /* @__PURE__ */ __mf_1$1("span", { className: styles$4.detailLabel, children: "Phone" }),
-          /* @__PURE__ */ __mf_1$1("p", { className: styles$4.detailValue, children: /* @__PURE__ */ __mf_1$1("a", { href: `tel:${contact.phone.replace(/\s+/g, "")}`, children: contact.phone }) })
+        contact.phone ? /* @__PURE__ */ __mf_2("li", { className: styles$5.detail, children: [
+          /* @__PURE__ */ __mf_1$1("span", { className: styles$5.detailLabel, children: "Phone" }),
+          /* @__PURE__ */ __mf_1$1("p", { className: styles$5.detailValue, children: /* @__PURE__ */ __mf_1$1("a", { href: `tel:${contact.phone.replace(/\s+/g, "")}`, children: contact.phone }) })
         ] }) : null,
-        contact.address ? /* @__PURE__ */ __mf_2("li", { className: styles$4.detail, children: [
-          /* @__PURE__ */ __mf_1$1("span", { className: styles$4.detailLabel, children: "Address" }),
-          /* @__PURE__ */ __mf_1$1("p", { className: styles$4.detailValue, children: contact.address })
+        contact.address ? /* @__PURE__ */ __mf_2("li", { className: styles$5.detail, children: [
+          /* @__PURE__ */ __mf_1$1("span", { className: styles$5.detailLabel, children: "Address" }),
+          /* @__PURE__ */ __mf_1$1("p", { className: styles$5.detailValue, children: contact.address })
         ] }) : null
       ] }),
-      /* @__PURE__ */ __mf_1$1("div", { className: styles$4.actions, children: /* @__PURE__ */ __mf_1$1(
+      /* @__PURE__ */ __mf_1$1("div", { className: styles$5.actions, children: /* @__PURE__ */ __mf_1$1(
         "button",
         {
           type: "button",
-          className: styles$4.downloadBtn,
+          className: styles$5.downloadBtn,
           onClick: handleDownload,
           disabled: !interactive || !hasIdentity,
           children: "Add to Contacts"
         }
       ) })
     ] }),
-    /* @__PURE__ */ __mf_2("aside", { className: styles$4.qrPanel, "aria-label": "vCard QR code", children: [
-      qrDataUrl ? /* @__PURE__ */ __mf_1$1("img", { className: styles$4.qrImage, src: qrDataUrl, alt: "QR code with contact vCard" }) : /* @__PURE__ */ __mf_1$1("div", { className: styles$4.qrImage, "aria-hidden": "true" }),
-      /* @__PURE__ */ __mf_1$1("p", { className: styles$4.qrCaption, children: "Scan vCard" })
+    /* @__PURE__ */ __mf_2("aside", { className: styles$5.qrPanel, "aria-label": "vCard QR code", children: [
+      qrDataUrl ? /* @__PURE__ */ __mf_1$1("img", { className: styles$5.qrImage, src: qrDataUrl, alt: "QR code with contact vCard" }) : /* @__PURE__ */ __mf_1$1("div", { className: styles$5.qrImage, "aria-hidden": "true" }),
+      /* @__PURE__ */ __mf_1$1("p", { className: styles$5.qrCaption, children: "Scan vCard" })
     ] })
   ] }) });
 };
@@ -3574,7 +3576,7 @@ const ContactCardBuild = (props) => {
   const {
     connectors: { connect }
   } = __mf_161();
-  const merged = { ...config$4.defaultProps, ...props };
+  const merged = { ...config$5.defaultProps, ...props };
   return /* @__PURE__ */ __mf_1$1("div", { ref: connect, className: cn(props.className, props.classNames), style: props.style, children: /* @__PURE__ */ __mf_1$1(
     ContactCardView,
     {
@@ -3590,7 +3592,7 @@ const ContactCardBuild = (props) => {
 };
 
 const ContactCardRender = (props) => {
-  const merged = { ...config$4.defaultProps, ...props };
+  const merged = { ...config$5.defaultProps, ...props };
   const { connect } = __mf_180();
   const {
     sources: { datasource: ds }
@@ -3658,11 +3660,11 @@ const ContactCard = (props) => {
   }));
   return enabled ? /* @__PURE__ */ __mf_1$1(ContactCardBuild, { ...props }) : /* @__PURE__ */ __mf_1$1(ContactCardRender, { ...props });
 };
-ContactCard.craft = config$4.craft;
-ContactCard.info = config$4.info;
-ContactCard.defaultProps = config$4.defaultProps;
+ContactCard.craft = config$5.craft;
+ContactCard.info = config$5.info;
+ContactCard.defaultProps = config$5.defaultProps;
 
-const dataSettings$3 = [
+const dataSettings$4 = [
   {
     key: "datasource",
     label: "Invoice or lines",
@@ -3773,18 +3775,18 @@ const sectionSettings = [
     defaultValue: true
   }
 ];
-const commonSettings$3 = [
-  ...dataSettings$3,
+const commonSettings$4 = [
+  ...dataSettings$4,
   ...formattingSettings,
   ...designSettings$1,
   ...sectionSettings
 ];
-const Settings$3 = [
+const Settings$4 = [
   {
     key: "data",
     label: "Data",
     type: __mf_17.GROUP,
-    components: dataSettings$3
+    components: dataSettings$4
   },
   {
     key: "formatting",
@@ -3815,8 +3817,8 @@ const Settings$3 = [
     "style.textTransform"
   )
 ];
-const BasicSettings$3 = [
-  ...commonSettings$3,
+const BasicSettings$4 = [
+  ...commonSettings$4,
   ...__mf_121(__mf_1).filter(
     "style.overflow",
     "display",
@@ -4149,7 +4151,7 @@ const DEFAULT_CATEGORY_COLORS$1 = [
   { category: "Roller", color: "#12B886" },
   { category: "Multifonction", color: "#F59F00" }
 ];
-const config$3 = {
+const config$4 = {
   craft: {
     displayName: "Invoice Line Grid",
     kind: __mf_16.BASIC,
@@ -4159,7 +4161,7 @@ const config$3 = {
       events: []
     },
     related: {
-      settings: __mf_56(Settings$3, BasicSettings$3)
+      settings: __mf_56(Settings$4, BasicSettings$4)
     },
     sanityCheck: {
       keys: [{ name: "datasource", require: true, isDatasource: true }]
@@ -4231,7 +4233,7 @@ const paidToggle = "_paidToggle_lb910_38";
 const paidToggleActive = "_paidToggleActive_lb910_56";
 const paidDot = "_paidDot_lb910_62";
 const paidDotActive = "_paidDotActive_lb910_69";
-const btn$1 = "_btn_lb910_73";
+const btn$2 = "_btn_lb910_73";
 const btnAccent = "_btnAccent_lb910_95";
 const btnDanger = "_btnDanger_lb910_100";
 const layout = "_layout_lb910_111";
@@ -4272,7 +4274,7 @@ const barLabel = "_barLabel_lb910_368";
 const barValue = "_barValue_lb910_376";
 const barTrack = "_barTrack_lb910_383";
 const barFill = "_barFill_lb910_391";
-const styles$3 = {
+const styles$4 = {
 	card: card$1,
 	header: header,
 	title: title,
@@ -4281,7 +4283,7 @@ const styles$3 = {
 	paidToggleActive: paidToggleActive,
 	paidDot: paidDot,
 	paidDotActive: paidDotActive,
-	btn: btn$1,
+	btn: btn$2,
 	btnAccent: btnAccent,
 	btnDanger: btnDanger,
 	layout: layout,
@@ -4340,7 +4342,7 @@ function QuantityRing({
   return /* @__PURE__ */ __mf_2(
     "svg",
     {
-      className: styles$3.ring,
+      className: styles$4.ring,
       width: RING_SIZE,
       height: RING_SIZE,
       viewBox: `0 0 ${RING_SIZE} ${RING_SIZE}`,
@@ -4480,7 +4482,7 @@ const InvoiceLineGridView = __mf_16$1(
       return /* @__PURE__ */ __mf_1$1(
         "input",
         {
-          className: styles$3.input,
+          className: styles$4.input,
           type: "text",
           inputMode: "decimal",
           defaultValue: String(value),
@@ -4496,18 +4498,18 @@ const InvoiceLineGridView = __mf_16$1(
         }
       );
     };
-    return /* @__PURE__ */ __mf_2("div", { className: styles$3.card, style: cssVars, children: [
-      interactive ? /* @__PURE__ */ __mf_2("div", { className: styles$3.header, children: [
-        /* @__PURE__ */ __mf_1$1("div", { className: styles$3.title, children: "Invoice lines" }),
-        /* @__PURE__ */ __mf_2("div", { className: styles$3.headerActions, children: [
+    return /* @__PURE__ */ __mf_2("div", { className: styles$4.card, style: cssVars, children: [
+      interactive ? /* @__PURE__ */ __mf_2("div", { className: styles$4.header, children: [
+        /* @__PURE__ */ __mf_1$1("div", { className: styles$4.title, children: "Invoice lines" }),
+        /* @__PURE__ */ __mf_2("div", { className: styles$4.headerActions, children: [
           /* @__PURE__ */ __mf_2(
             "button",
             {
               type: "button",
-              className: cn(styles$3.paidToggle, paid && styles$3.paidToggleActive),
+              className: cn(styles$4.paidToggle, paid && styles$4.paidToggleActive),
               onClick: () => onPaidChange?.(!paid),
               children: [
-                /* @__PURE__ */ __mf_1$1("span", { className: cn(styles$3.paidDot, paid && styles$3.paidDotActive) }),
+                /* @__PURE__ */ __mf_1$1("span", { className: cn(styles$4.paidDot, paid && styles$4.paidDotActive) }),
                 paid ? "Paid" : "Unpaid"
               ]
             }
@@ -4516,7 +4518,7 @@ const InvoiceLineGridView = __mf_16$1(
             "button",
             {
               type: "button",
-              className: cn(styles$3.btn, styles$3.btnAccent),
+              className: cn(styles$4.btn, styles$4.btnAccent),
               onClick: onAddLine,
               children: [
                 /* @__PURE__ */ __mf_1$1(MdAdd, { size: 16 }),
@@ -4526,34 +4528,34 @@ const InvoiceLineGridView = __mf_16$1(
           )
         ] })
       ] }) : null,
-      /* @__PURE__ */ __mf_2("div", { className: cn(styles$3.layout, !showAside && styles$3.layoutSolo), children: [
-        /* @__PURE__ */ __mf_1$1("div", { className: styles$3.gridWrap, children: model.rows.length === 0 ? /* @__PURE__ */ __mf_1$1("div", { className: styles$3.empty, children: "No line items" }) : /* @__PURE__ */ __mf_2("table", { className: styles$3.table, children: [
+      /* @__PURE__ */ __mf_2("div", { className: cn(styles$4.layout, !showAside && styles$4.layoutSolo), children: [
+        /* @__PURE__ */ __mf_1$1("div", { className: styles$4.gridWrap, children: model.rows.length === 0 ? /* @__PURE__ */ __mf_1$1("div", { className: styles$4.empty, children: "No line items" }) : /* @__PURE__ */ __mf_2("table", { className: styles$4.table, children: [
           /* @__PURE__ */ __mf_1$1("thead", { children: /* @__PURE__ */ __mf_2("tr", { children: [
-            interactive ? /* @__PURE__ */ __mf_1$1("th", { className: styles$3.drag, "aria-label": "Reorder" }) : null,
-            /* @__PURE__ */ __mf_1$1("th", { className: styles$3.product, children: "Product" }),
-            /* @__PURE__ */ __mf_1$1("th", { className: styles$3.num, children: "Quantity" }),
-            /* @__PURE__ */ __mf_1$1("th", { className: styles$3.num, children: "Unit Price" }),
-            model.hasDiscount || interactive ? /* @__PURE__ */ __mf_1$1("th", { className: styles$3.num, children: "Discount %" }) : null,
-            model.hasTax || interactive ? /* @__PURE__ */ __mf_1$1("th", { className: styles$3.num, children: "Tax %" }) : null,
-            /* @__PURE__ */ __mf_1$1("th", { className: styles$3.num, children: "Line Total" }),
-            interactive ? /* @__PURE__ */ __mf_1$1("th", { className: styles$3.actions, "aria-label": "Actions" }) : null
+            interactive ? /* @__PURE__ */ __mf_1$1("th", { className: styles$4.drag, "aria-label": "Reorder" }) : null,
+            /* @__PURE__ */ __mf_1$1("th", { className: styles$4.product, children: "Product" }),
+            /* @__PURE__ */ __mf_1$1("th", { className: styles$4.num, children: "Quantity" }),
+            /* @__PURE__ */ __mf_1$1("th", { className: styles$4.num, children: "Unit Price" }),
+            model.hasDiscount || interactive ? /* @__PURE__ */ __mf_1$1("th", { className: styles$4.num, children: "Discount %" }) : null,
+            model.hasTax || interactive ? /* @__PURE__ */ __mf_1$1("th", { className: styles$4.num, children: "Tax %" }) : null,
+            /* @__PURE__ */ __mf_1$1("th", { className: styles$4.num, children: "Line Total" }),
+            interactive ? /* @__PURE__ */ __mf_1$1("th", { className: styles$4.actions, "aria-label": "Actions" }) : null
           ] }) }),
           /* @__PURE__ */ __mf_1$1("tbody", { children: model.rows.map((row) => /* @__PURE__ */ __mf_2(
             "tr",
             {
               className: cn(
-                dragId === row.id && styles$3.dragging,
-                dropId === row.id && styles$3.dropTarget
+                dragId === row.id && styles$4.dragging,
+                dropId === row.id && styles$4.dropTarget
               ),
               onDragOver: (event) => handleDragOver(event, row.id),
               onDrop: (event) => handleDrop(event, row.id),
               onDragLeave: () => setDropId(null),
               children: [
-                interactive ? /* @__PURE__ */ __mf_1$1("td", { className: styles$3.drag, children: /* @__PURE__ */ __mf_1$1(
+                interactive ? /* @__PURE__ */ __mf_1$1("td", { className: styles$4.drag, children: /* @__PURE__ */ __mf_1$1(
                   "button",
                   {
                     type: "button",
-                    className: styles$3.dragHandle,
+                    className: styles$4.dragHandle,
                     draggable: true,
                     "aria-label": "Drag to reorder",
                     onDragStart: (event) => handleDragStart(event, row.id),
@@ -4561,26 +4563,26 @@ const InvoiceLineGridView = __mf_16$1(
                     children: /* @__PURE__ */ __mf_1$1(MdDragIndicator, { size: 16 })
                   }
                 ) }) : null,
-                /* @__PURE__ */ __mf_1$1("td", { className: styles$3.product, children: /* @__PURE__ */ __mf_2("div", { className: styles$3.productCell, children: [
-                  showCategoryChips && row.category ? /* @__PURE__ */ __mf_2("span", { className: styles$3.chip, title: row.category, children: [
-                    /* @__PURE__ */ __mf_1$1("span", { className: styles$3.chipDot, style: { background: row.color } }),
-                    /* @__PURE__ */ __mf_1$1("span", { className: styles$3.chipLabel, children: row.category })
+                /* @__PURE__ */ __mf_1$1("td", { className: styles$4.product, children: /* @__PURE__ */ __mf_2("div", { className: styles$4.productCell, children: [
+                  showCategoryChips && row.category ? /* @__PURE__ */ __mf_2("span", { className: styles$4.chip, title: row.category, children: [
+                    /* @__PURE__ */ __mf_1$1("span", { className: styles$4.chipDot, style: { background: row.color } }),
+                    /* @__PURE__ */ __mf_1$1("span", { className: styles$4.chipLabel, children: row.category })
                   ] }) : null,
-                  /* @__PURE__ */ __mf_2("div", { className: styles$3.productCopy, children: [
-                    /* @__PURE__ */ __mf_1$1("div", { className: styles$3.name, children: row.name || "Untitled" }),
-                    row.productRef ? /* @__PURE__ */ __mf_1$1("div", { className: styles$3.ref, children: row.productRef }) : null
+                  /* @__PURE__ */ __mf_2("div", { className: styles$4.productCopy, children: [
+                    /* @__PURE__ */ __mf_1$1("div", { className: styles$4.name, children: row.name || "Untitled" }),
+                    row.productRef ? /* @__PURE__ */ __mf_1$1("div", { className: styles$4.ref, children: row.productRef }) : null
                   ] })
                 ] }) }),
-                /* @__PURE__ */ __mf_1$1("td", { className: styles$3.num, children: renderEditableCell(row, "quantity") }),
-                /* @__PURE__ */ __mf_1$1("td", { className: styles$3.num, children: renderEditableCell(row, "unitPrice") }),
-                model.hasDiscount || interactive ? /* @__PURE__ */ __mf_1$1("td", { className: styles$3.num, children: renderEditableCell(row, "discountPct") }) : null,
-                model.hasTax || interactive ? /* @__PURE__ */ __mf_1$1("td", { className: styles$3.num, children: renderEditableCell(row, "taxPct") }) : null,
-                /* @__PURE__ */ __mf_1$1("td", { className: styles$3.num, children: money(row.lineNet) }),
-                interactive ? /* @__PURE__ */ __mf_1$1("td", { className: styles$3.actions, children: /* @__PURE__ */ __mf_1$1(
+                /* @__PURE__ */ __mf_1$1("td", { className: styles$4.num, children: renderEditableCell(row, "quantity") }),
+                /* @__PURE__ */ __mf_1$1("td", { className: styles$4.num, children: renderEditableCell(row, "unitPrice") }),
+                model.hasDiscount || interactive ? /* @__PURE__ */ __mf_1$1("td", { className: styles$4.num, children: renderEditableCell(row, "discountPct") }) : null,
+                model.hasTax || interactive ? /* @__PURE__ */ __mf_1$1("td", { className: styles$4.num, children: renderEditableCell(row, "taxPct") }) : null,
+                /* @__PURE__ */ __mf_1$1("td", { className: styles$4.num, children: money(row.lineNet) }),
+                interactive ? /* @__PURE__ */ __mf_1$1("td", { className: styles$4.actions, children: /* @__PURE__ */ __mf_1$1(
                   "button",
                   {
                     type: "button",
-                    className: styles$3.btnDanger,
+                    className: styles$4.btnDanger,
                     "aria-label": "Remove line",
                     onClick: () => onRemoveLine?.(row.id),
                     children: /* @__PURE__ */ __mf_1$1(MdDeleteOutline, { size: 18 })
@@ -4591,34 +4593,34 @@ const InvoiceLineGridView = __mf_16$1(
             row.id
           )) })
         ] }) }),
-        showAside ? /* @__PURE__ */ __mf_2("aside", { className: styles$3.aside, children: [
-          showSummary ? /* @__PURE__ */ __mf_2("div", { className: styles$3.summary, children: [
-            /* @__PURE__ */ __mf_2("div", { className: styles$3.summaryRow, children: [
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.summaryLabel, children: "Subtotal" }),
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.summaryValue, children: money(model.summary.subtotal) })
+        showAside ? /* @__PURE__ */ __mf_2("aside", { className: styles$4.aside, children: [
+          showSummary ? /* @__PURE__ */ __mf_2("div", { className: styles$4.summary, children: [
+            /* @__PURE__ */ __mf_2("div", { className: styles$4.summaryRow, children: [
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.summaryLabel, children: "Subtotal" }),
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.summaryValue, children: money(model.summary.subtotal) })
             ] }),
-            model.summary.discount > 0 ? /* @__PURE__ */ __mf_2("div", { className: styles$3.summaryRow, children: [
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.summaryLabel, children: "Discount" }),
-              /* @__PURE__ */ __mf_2("span", { className: styles$3.summaryValue, children: [
+            model.summary.discount > 0 ? /* @__PURE__ */ __mf_2("div", { className: styles$4.summaryRow, children: [
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.summaryLabel, children: "Discount" }),
+              /* @__PURE__ */ __mf_2("span", { className: styles$4.summaryValue, children: [
                 "−",
                 money(model.summary.discount)
               ] })
             ] }) : null,
-            /* @__PURE__ */ __mf_2("div", { className: styles$3.summaryRow, children: [
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.summaryLabel, children: "Net excluding tax" }),
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.summaryValue, children: money(model.summary.net) })
+            /* @__PURE__ */ __mf_2("div", { className: styles$4.summaryRow, children: [
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.summaryLabel, children: "Net excluding tax" }),
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.summaryValue, children: money(model.summary.net) })
             ] }),
-            /* @__PURE__ */ __mf_2("div", { className: styles$3.summaryRow, children: [
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.summaryLabel, children: "Tax total" }),
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.summaryValue, children: money(model.summary.tax) })
+            /* @__PURE__ */ __mf_2("div", { className: styles$4.summaryRow, children: [
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.summaryLabel, children: "Tax total" }),
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.summaryValue, children: money(model.summary.tax) })
             ] }),
-            /* @__PURE__ */ __mf_2("div", { className: cn(styles$3.summaryRow, styles$3.totalRow), children: [
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.totalLabel, children: "Total due" }),
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.totalValue, children: money(model.summary.totalDue) })
+            /* @__PURE__ */ __mf_2("div", { className: cn(styles$4.summaryRow, styles$4.totalRow), children: [
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.totalLabel, children: "Total due" }),
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.totalValue, children: money(model.summary.totalDue) })
             ] }),
-            /* @__PURE__ */ __mf_2("div", { className: cn(styles$3.summaryRow, styles$3.qtyRow), children: [
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.summaryLabel, children: "Total quantity" }),
-              /* @__PURE__ */ __mf_2("span", { className: styles$3.qtyMeta, children: [
+            /* @__PURE__ */ __mf_2("div", { className: cn(styles$4.summaryRow, styles$4.qtyRow), children: [
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.summaryLabel, children: "Total quantity" }),
+              /* @__PURE__ */ __mf_2("span", { className: styles$4.qtyMeta, children: [
                 showQuantityRing ? /* @__PURE__ */ __mf_1$1(
                   QuantityRing,
                   {
@@ -4627,19 +4629,19 @@ const InvoiceLineGridView = __mf_16$1(
                     trackColor: "rgba(35, 32, 46, 0.08)"
                   }
                 ) : null,
-                /* @__PURE__ */ __mf_1$1("span", { className: styles$3.summaryValue, children: formatNumber(model.summary.totalQuantity, locale) })
+                /* @__PURE__ */ __mf_1$1("span", { className: styles$4.summaryValue, children: formatNumber(model.summary.totalQuantity, locale) })
               ] })
             ] })
           ] }) : null,
-          showChart && model.chart.length > 0 ? /* @__PURE__ */ __mf_2("div", { className: styles$3.chart, children: [
-            /* @__PURE__ */ __mf_1$1("div", { className: styles$3.chartTitle, children: "Revenue by product line (net)" }),
-            model.chart.map((bar) => /* @__PURE__ */ __mf_2("div", { className: styles$3.barRow, children: [
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.barLabel, title: bar.label, children: bar.label }),
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.barValue, children: money(bar.net) }),
-              /* @__PURE__ */ __mf_1$1("div", { className: styles$3.barTrack, children: /* @__PURE__ */ __mf_1$1(
+          showChart && model.chart.length > 0 ? /* @__PURE__ */ __mf_2("div", { className: styles$4.chart, children: [
+            /* @__PURE__ */ __mf_1$1("div", { className: styles$4.chartTitle, children: "Revenue by product line (net)" }),
+            model.chart.map((bar) => /* @__PURE__ */ __mf_2("div", { className: styles$4.barRow, children: [
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.barLabel, title: bar.label, children: bar.label }),
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$4.barValue, children: money(bar.net) }),
+              /* @__PURE__ */ __mf_1$1("div", { className: styles$4.barTrack, children: /* @__PURE__ */ __mf_1$1(
                 "div",
                 {
-                  className: styles$3.barFill,
+                  className: styles$4.barFill,
                   style: { width: `${bar.pct}%`, background: bar.color }
                 }
               ) })
@@ -4656,7 +4658,7 @@ const InvoiceLineGridBuild = (props) => {
   const {
     connectors: { connect }
   } = __mf_161();
-  const merged = { ...config$3.defaultProps, ...props };
+  const merged = { ...config$4.defaultProps, ...props };
   return /* @__PURE__ */ __mf_1$1("div", { ref: connect, className: cn(props.className, props.classNames), style: props.style, children: /* @__PURE__ */ __mf_1$1(
     InvoiceLineGridView,
     {
@@ -4681,7 +4683,7 @@ const InvoiceLineGridBuild = (props) => {
 
 const DEFAULT_LINES_RELATION = "Lines_Fm_Invoices";
 const InvoiceLineGridRender = (props) => {
-  const merged = { ...config$3.defaultProps, ...props };
+  const merged = { ...config$4.defaultProps, ...props };
   const linesRelation = merged.linesRelation || DEFAULT_LINES_RELATION;
   const { connect, emit } = __mf_180({ autoBindEvents: false });
   const {
@@ -4845,11 +4847,11 @@ const InvoiceLineGrid = (props) => {
   }));
   return enabled ? /* @__PURE__ */ __mf_1$1(InvoiceLineGridBuild, { ...props }) : /* @__PURE__ */ __mf_1$1(InvoiceLineGridRender, { ...props });
 };
-InvoiceLineGrid.craft = config$3.craft;
-InvoiceLineGrid.info = config$3.info;
-InvoiceLineGrid.defaultProps = config$3.defaultProps;
+InvoiceLineGrid.craft = config$4.craft;
+InvoiceLineGrid.info = config$4.info;
+InvoiceLineGrid.defaultProps = config$4.defaultProps;
 
-const dataSettings$2 = [
+const dataSettings$3 = [
   {
     key: "datasource",
     label: "Tasks",
@@ -4969,18 +4971,18 @@ const displaySettings = [
     defaultValue: true
   }
 ];
-const commonSettings$2 = [
-  ...dataSettings$2,
+const commonSettings$3 = [
+  ...dataSettings$3,
   ...columnSettings,
   ...designSettings,
   ...displaySettings
 ];
-const Settings$2 = [
+const Settings$3 = [
   {
     key: "data",
     label: "Data",
     type: __mf_17.GROUP,
-    components: dataSettings$2
+    components: dataSettings$3
   },
   {
     key: "columns",
@@ -5011,8 +5013,8 @@ const Settings$2 = [
     "style.textTransform"
   )
 ];
-const BasicSettings$2 = [
-  ...commonSettings$2,
+const BasicSettings$3 = [
+  ...commonSettings$3,
   ...__mf_121(__mf_1).filter(
     "style.overflow",
     "display",
@@ -5318,7 +5320,7 @@ const DEFAULT_CATEGORY_COLORS = [
   { category: "Travel", color: "green" },
   { category: "Personal", color: "aqua" }
 ];
-const config$2 = {
+const config$3 = {
   craft: {
     displayName: "Kanban Board",
     kind: __mf_16.BASIC,
@@ -5328,7 +5330,7 @@ const config$2 = {
       events: []
     },
     related: {
-      settings: __mf_56(Settings$2, BasicSettings$2)
+      settings: __mf_56(Settings$3, BasicSettings$3)
     },
     sanityCheck: {
       keys: [{ name: "datasource", require: true, isDatasource: true }]
@@ -5414,7 +5416,7 @@ const dueSoon = "_dueSoon_1l6dv_175";
 const dueOverdue = "_dueOverdue_1l6dv_180";
 const emptyColumn = "_emptyColumn_1l6dv_185";
 const emptyBoard = "_emptyBoard_1l6dv_198";
-const styles$2 = {
+const styles$3 = {
 	board: board,
 	column: column,
 	columnDropTarget: columnDropTarget,
@@ -5498,14 +5500,14 @@ const KanbanBoardView = __mf_16$1(
       setDropStatus(null);
     };
     if (tasks.length === 0 && boardColumns.length === 0) {
-      return /* @__PURE__ */ __mf_1$1("div", { className: styles$2.board, style: cssVars, children: /* @__PURE__ */ __mf_1$1("div", { className: styles$2.emptyBoard, children: "No tasks" }) });
+      return /* @__PURE__ */ __mf_1$1("div", { className: styles$3.board, style: cssVars, children: /* @__PURE__ */ __mf_1$1("div", { className: styles$3.emptyBoard, children: "No tasks" }) });
     }
-    return /* @__PURE__ */ __mf_1$1("div", { className: styles$2.board, style: cssVars, role: "list", children: boardColumns.map((column) => {
+    return /* @__PURE__ */ __mf_1$1("div", { className: styles$3.board, style: cssVars, role: "list", children: boardColumns.map((column) => {
       const columnTasks = grouped[column.status] ?? [];
       return /* @__PURE__ */ __mf_2(
         "section",
         {
-          className: cn(styles$2.column, dropStatus === column.status && styles$2.columnDropTarget),
+          className: cn(styles$3.column, dropStatus === column.status && styles$3.columnDropTarget),
           "aria-label": column.status,
           onDragOver: (event) => handleDragOverColumn(event, column.status),
           onDrop: (event) => handleDropOnColumn(event, column.status),
@@ -5513,45 +5515,45 @@ const KanbanBoardView = __mf_16$1(
             if (dropStatus === column.status) setDropStatus(null);
           },
           children: [
-            /* @__PURE__ */ __mf_2("header", { className: styles$2.columnHeader, children: [
-              /* @__PURE__ */ __mf_1$1("h3", { className: styles$2.columnTitle, children: column.status }),
-              /* @__PURE__ */ __mf_1$1("span", { className: styles$2.columnCount, children: columnTasks.length })
+            /* @__PURE__ */ __mf_2("header", { className: styles$3.columnHeader, children: [
+              /* @__PURE__ */ __mf_1$1("h3", { className: styles$3.columnTitle, children: column.status }),
+              /* @__PURE__ */ __mf_1$1("span", { className: styles$3.columnCount, children: columnTasks.length })
             ] }),
-            /* @__PURE__ */ __mf_1$1("div", { className: styles$2.columnBody, children: columnTasks.length === 0 ? /* @__PURE__ */ __mf_1$1("div", { className: styles$2.emptyColumn, children: interactive ? "Drop a card here" : "No cards" }) : columnTasks.map((task) => {
+            /* @__PURE__ */ __mf_1$1("div", { className: styles$3.columnBody, children: columnTasks.length === 0 ? /* @__PURE__ */ __mf_1$1("div", { className: styles$3.emptyColumn, children: interactive ? "Drop a card here" : "No cards" }) : columnTasks.map((task) => {
               const color = resolveCategoryColor(task, colorMap);
               const dueTone = task.dueDate ? isDueSoonOrOverdue(task.dueDate) : "ok";
               return /* @__PURE__ */ __mf_2(
                 "article",
                 {
                   className: cn(
-                    styles$2.card,
-                    interactive ? styles$2.cardInteractive : styles$2.cardStatic,
-                    dragId === task.id && styles$2.cardDragging
+                    styles$3.card,
+                    interactive ? styles$3.cardInteractive : styles$3.cardStatic,
+                    dragId === task.id && styles$3.cardDragging
                   ),
                   draggable: interactive,
                   onDragStart: (event) => handleDragStart(event, task.id),
                   onDragEnd: handleDragEnd,
                   role: "listitem",
                   children: [
-                    /* @__PURE__ */ __mf_1$1("h4", { className: styles$2.cardTitle, children: task.title }),
-                    showCategoryChips && task.category || showDueDates && task.dueDate ? /* @__PURE__ */ __mf_2("div", { className: styles$2.cardMeta, children: [
-                      showCategoryChips && task.category ? /* @__PURE__ */ __mf_2("span", { className: styles$2.chip, title: task.category, children: [
+                    /* @__PURE__ */ __mf_1$1("h4", { className: styles$3.cardTitle, children: task.title }),
+                    showCategoryChips && task.category || showDueDates && task.dueDate ? /* @__PURE__ */ __mf_2("div", { className: styles$3.cardMeta, children: [
+                      showCategoryChips && task.category ? /* @__PURE__ */ __mf_2("span", { className: styles$3.chip, title: task.category, children: [
                         /* @__PURE__ */ __mf_1$1(
                           "span",
                           {
-                            className: styles$2.chipDot,
+                            className: styles$3.chipDot,
                             style: { background: color }
                           }
                         ),
-                        /* @__PURE__ */ __mf_1$1("span", { className: styles$2.chipLabel, children: task.category })
+                        /* @__PURE__ */ __mf_1$1("span", { className: styles$3.chipLabel, children: task.category })
                       ] }) : null,
                       showDueDates && task.dueDate ? /* @__PURE__ */ __mf_2(
                         "span",
                         {
                           className: cn(
-                            styles$2.due,
-                            dueTone === "soon" && styles$2.dueSoon,
-                            dueTone === "overdue" && styles$2.dueOverdue
+                            styles$3.due,
+                            dueTone === "soon" && styles$3.dueSoon,
+                            dueTone === "overdue" && styles$3.dueOverdue
                           ),
                           title: task.dueDate,
                           children: [
@@ -5579,7 +5581,7 @@ const KanbanBoardBuild = (props) => {
   const {
     connectors: { connect }
   } = __mf_161();
-  const merged = { ...config$2.defaultProps, ...props };
+  const merged = { ...config$3.defaultProps, ...props };
   return /* @__PURE__ */ __mf_1$1("div", { ref: connect, className: cn(props.className, props.classNames), style: props.style, children: /* @__PURE__ */ __mf_1$1(
     KanbanBoardView,
     {
@@ -5600,7 +5602,7 @@ const KanbanBoardBuild = (props) => {
 };
 
 const KanbanBoardRender = (props) => {
-  const merged = { ...config$2.defaultProps, ...props };
+  const merged = { ...config$3.defaultProps, ...props };
   const { connect, emit } = __mf_180({ autoBindEvents: false });
   const {
     sources: { datasource: ds }
@@ -5716,11 +5718,11 @@ const KanbanBoard = (props) => {
   }));
   return enabled ? /* @__PURE__ */ __mf_1$1(KanbanBoardBuild, { ...props }) : /* @__PURE__ */ __mf_1$1(KanbanBoardRender, { ...props });
 };
-KanbanBoard.craft = config$2.craft;
-KanbanBoard.info = config$2.info;
-KanbanBoard.defaultProps = config$2.defaultProps;
+KanbanBoard.craft = config$3.craft;
+KanbanBoard.info = config$3.info;
+KanbanBoard.defaultProps = config$3.defaultProps;
 
-const dataSettings$1 = [
+const dataSettings$2 = [
   {
     key: "datasource",
     label: "Data Source",
@@ -5747,13 +5749,13 @@ const gaugeSettings = [
     defaultValue: 14
   }
 ];
-const commonSettings$1 = [...dataSettings$1, ...gaugeSettings];
-const Settings$1 = [
+const commonSettings$2 = [...dataSettings$2, ...gaugeSettings];
+const Settings$2 = [
   {
     key: "data",
     label: "Data",
     type: __mf_17.GROUP,
-    components: dataSettings$1
+    components: dataSettings$2
   },
   {
     key: "gauge",
@@ -5772,8 +5774,8 @@ const Settings$1 = [
     "style.textTransform"
   )
 ];
-const BasicSettings$1 = [
-  ...commonSettings$1,
+const BasicSettings$2 = [
+  ...commonSettings$2,
   ...__mf_121(__mf_1).filter(
     "style.overflow",
     "display",
@@ -5786,7 +5788,7 @@ const BasicSettings$1 = [
   )
 ];
 
-const config$1 = {
+const config$2 = {
   craft: {
     displayName: "Progress Gauge",
     kind: __mf_16.BASIC,
@@ -5796,7 +5798,7 @@ const config$1 = {
       events: []
     },
     related: {
-      settings: __mf_56(Settings$1, BasicSettings$1)
+      settings: __mf_56(Settings$2, BasicSettings$2)
     },
     sanityCheck: {
       keys: [{ name: "datasource", require: true, isDatasource: true }]
@@ -5822,7 +5824,7 @@ const config$1 = {
   }
 };
 
-const root$1 = "_root_1q9cf_1";
+const root$2 = "_root_1q9cf_1";
 const svg = "_svg_1q9cf_14";
 const track = "_track_1q9cf_22";
 const progress = "_progress_1q9cf_28";
@@ -5830,8 +5832,8 @@ const progressDragging = "_progressDragging_1q9cf_39";
 const label = "_label_1q9cf_43";
 const interactive = "_interactive_1q9cf_53";
 const readOnly = "_readOnly_1q9cf_61";
-const styles$1 = {
-	root: root$1,
+const styles$2 = {
+	root: root$2,
 	svg: svg,
 	track: track,
 	progress: progress,
@@ -5959,7 +5961,7 @@ const ProgressGaugeView = ({
   return /* @__PURE__ */ __mf_1$1(
     "div",
     {
-      className: cn(styles$1.root, canDrag ? styles$1.interactive : styles$1.readOnly, className),
+      className: cn(styles$2.root, canDrag ? styles$2.interactive : styles$2.readOnly, className),
       style: {
         "--pg-color": color,
         "--pg-track": TRACK_COLOR
@@ -5976,7 +5978,7 @@ const ProgressGaugeView = ({
         "svg",
         {
           ref: svgRef,
-          className: styles$1.svg,
+          className: styles$2.svg,
           viewBox: `0 0 ${VIEW_SIZE} ${VIEW_SIZE}`,
           "aria-hidden": "true",
           onPointerDown,
@@ -5987,7 +5989,7 @@ const ProgressGaugeView = ({
             /* @__PURE__ */ __mf_1$1(
               "circle",
               {
-                className: styles$1.track,
+                className: styles$2.track,
                 cx: CENTER,
                 cy: CENTER,
                 r: radius,
@@ -5997,7 +5999,7 @@ const ProgressGaugeView = ({
             /* @__PURE__ */ __mf_1$1(
               "circle",
               {
-                className: cn(styles$1.progress, dragging && styles$1.progressDragging),
+                className: cn(styles$2.progress, dragging && styles$2.progressDragging),
                 cx: CENTER,
                 cy: CENTER,
                 r: radius,
@@ -6006,7 +6008,7 @@ const ProgressGaugeView = ({
                 strokeDashoffset: offset
               }
             ),
-            /* @__PURE__ */ __mf_2("text", { className: styles$1.label, x: CENTER, y: CENTER, fontSize: VIEW_SIZE * 0.22, children: [
+            /* @__PURE__ */ __mf_2("text", { className: styles$2.label, x: CENTER, y: CENTER, fontSize: VIEW_SIZE * 0.22, children: [
               clamped,
               "%"
             ] })
@@ -6022,7 +6024,7 @@ const ProgressGaugeBuild = (props) => {
   const {
     connectors: { connect }
   } = __mf_161();
-  const merged = { ...config$1.defaultProps, ...props };
+  const merged = { ...config$2.defaultProps, ...props };
   return /* @__PURE__ */ __mf_1$1("div", { ref: connect, className: cn(props.className, props.classNames), style: props.style, children: /* @__PURE__ */ __mf_1$1(
     ProgressGaugeView,
     {
@@ -6035,7 +6037,7 @@ const ProgressGaugeBuild = (props) => {
 };
 
 const ProgressGaugeRender = (props) => {
-  const merged = { ...config$1.defaultProps, ...props };
+  const merged = { ...config$2.defaultProps, ...props };
   const { connect, emit } = __mf_180({ autoBindEvents: false });
   const {
     sources: { datasource: ds }
@@ -6122,9 +6124,769 @@ const ProgressGauge = (props) => {
   }));
   return enabled ? /* @__PURE__ */ __mf_1$1(ProgressGaugeBuild, { ...props }) : /* @__PURE__ */ __mf_1$1(ProgressGaugeRender, { ...props });
 };
-ProgressGauge.craft = config$1.craft;
-ProgressGauge.info = config$1.info;
-ProgressGauge.defaultProps = config$1.defaultProps;
+ProgressGauge.craft = config$2.craft;
+ProgressGauge.info = config$2.info;
+ProgressGauge.defaultProps = config$2.defaultProps;
+
+const dataSettings$1 = [
+  {
+    key: "datasource",
+    label: "Data Source",
+    type: __mf_17.DS_AUTO_SUGGEST
+  },
+  {
+    key: "serverSideRef",
+    label: "Server Side",
+    type: __mf_17.TEXT_FIELD,
+    validateOnEnter: true
+  }
+];
+const editorSettings$1 = [
+  {
+    key: "placeholder",
+    label: "Placeholder",
+    type: __mf_17.TEXT_FIELD,
+    defaultValue: "Enter text..."
+  },
+  {
+    key: "readOnly",
+    label: "Read only",
+    type: __mf_17.CHECKBOX,
+    defaultValue: false
+  },
+  {
+    key: "minHeight",
+    label: "Min height (px)",
+    type: __mf_17.NUMBER_FIELD,
+    defaultValue: 180
+  }
+];
+const HIDDEN_STYLES = [
+  "style.overflow",
+  "display",
+  "style.textAlign",
+  "style.textDecorationLine",
+  "style.fontStyle",
+  "style.textTransform"
+];
+const commonSettings$1 = [...dataSettings$1, ...editorSettings$1];
+const Settings$1 = [
+  {
+    key: "data",
+    label: "Data",
+    type: __mf_17.GROUP,
+    components: dataSettings$1
+  },
+  {
+    key: "editor",
+    label: "Editor",
+    type: __mf_17.GROUP,
+    components: editorSettings$1
+  },
+  ...__mf_121(__mf_10).filter(...HIDDEN_STYLES)
+];
+const BasicSettings$1 = [
+  ...commonSettings$1,
+  ...__mf_121(__mf_1).filter(...HIDDEN_STYLES)
+];
+
+const config$1 = {
+  craft: {
+    displayName: "Rich Text 2",
+    kind: __mf_16.BASIC,
+    props: {
+      name: "",
+      classNames: [],
+      events: []
+    },
+    related: {
+      settings: __mf_56(Settings$1, BasicSettings$1)
+    },
+    sanityCheck: {
+      keys: [{ name: "datasource", require: true, isDatasource: true }]
+    },
+    requiredFields: { keys: ["datasource"], all: false }
+  },
+  info: {
+    displayName: "Rich Text 2",
+    exposed: true,
+    icon: MdOutlineEditNote,
+    events: [
+      { label: "On Change", value: "onChange" },
+      { label: "On Focus", value: "onFocus" },
+      { label: "On Blur", value: "onBlur" }
+    ],
+    datasources: {
+      accept: ["string"]
+    }
+  },
+  defaultProps: {
+    placeholder: "Enter text...",
+    readOnly: false,
+    minHeight: 180,
+    style: {
+      width: "100%",
+      minHeight: "180px"
+    }
+  }
+};
+
+const root$1 = "_root_4ch4i_1";
+const rootFocused = "_rootFocused_4ch4i_15";
+const rootReadOnly$1 = "_rootReadOnly_4ch4i_20";
+const toolbar$1 = "_toolbar_4ch4i_25";
+const group$1 = "_group_4ch4i_35";
+const divider$1 = "_divider_4ch4i_41";
+const btn$1 = "_btn_4ch4i_48";
+const select$1 = "_select_4ch4i_49";
+const btnActive$1 = "_btnActive_4ch4i_81";
+const surface$1 = "_surface_4ch4i_99";
+const editor$1 = "_editor_4ch4i_106";
+const editorEmpty$1 = "_editorEmpty_4ch4i_117";
+const editorReadOnly$1 = "_editorReadOnly_4ch4i_125";
+const styles$1 = {
+	root: root$1,
+	rootFocused: rootFocused,
+	rootReadOnly: rootReadOnly$1,
+	toolbar: toolbar$1,
+	group: group$1,
+	divider: divider$1,
+	btn: btn$1,
+	select: select$1,
+	btnActive: btnActive$1,
+	surface: surface$1,
+	editor: editor$1,
+	editorEmpty: editorEmpty$1,
+	editorReadOnly: editorReadOnly$1
+};
+
+const ALLOWED_TAGS = /* @__PURE__ */ new Set([
+  "P",
+  "BR",
+  "H1",
+  "H2",
+  "H3",
+  "STRONG",
+  "EM",
+  "U",
+  "S",
+  "UL",
+  "OL",
+  "LI",
+  "A",
+  "BLOCKQUOTE"
+]);
+const TAG_ALIASES = {
+  B: "STRONG",
+  I: "EM",
+  STRIKE: "S",
+  DEL: "S",
+  H4: "H3",
+  H5: "H3",
+  H6: "H3",
+  DIV: "P"
+};
+const DROPPED_TAGS = /* @__PURE__ */ new Set([
+  "SCRIPT",
+  "STYLE",
+  "IFRAME",
+  "FRAME",
+  "FRAMESET",
+  "OBJECT",
+  "EMBED",
+  "APPLET",
+  "LINK",
+  "META",
+  "BASE",
+  "FORM",
+  "INPUT",
+  "BUTTON",
+  "SELECT",
+  "TEXTAREA",
+  "NOSCRIPT",
+  "TEMPLATE"
+]);
+const BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "LI", "UL", "OL", "BLOCKQUOTE"]);
+const ALIGNMENTS = /* @__PURE__ */ new Set(["left", "center", "right", "justify"]);
+const SAFE_URL = /^(?:https?:\/\/|mailto:|tel:|#|\/|\.{1,2}\/)/i;
+function sanitizeUrl(url) {
+  const trimmed = url.trim();
+  if (!trimmed) return "";
+  if (SAFE_URL.test(trimmed)) return trimmed;
+  if (/^[\w-]+(\.[\w-]+)+([/?#].*)?$/.test(trimmed)) return `https://${trimmed}`;
+  return "";
+}
+function escapeHtml(text) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function readAlignment(el) {
+  const inline = el.style?.textAlign?.trim().toLowerCase();
+  if (inline && ALIGNMENTS.has(inline)) return inline;
+  const attr = el.getAttribute("align")?.trim().toLowerCase();
+  return attr && ALIGNMENTS.has(attr) ? attr : "";
+}
+function stripAttributes(el) {
+  const align = BLOCK_TAGS.has(el.tagName) ? readAlignment(el) : "";
+  const href = el.tagName === "A" ? sanitizeUrl(el.getAttribute("href") || "") : "";
+  for (const attr of Array.from(el.attributes)) {
+    el.removeAttribute(attr.name);
+  }
+  if (align) el.style.textAlign = align;
+  if (el.tagName === "A") {
+    if (!href) {
+      unwrap(el);
+      return;
+    }
+    el.setAttribute("href", href);
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener noreferrer");
+  }
+}
+function unwrap(el) {
+  const parent = el.parentNode;
+  if (!parent) return;
+  while (el.firstChild) parent.insertBefore(el.firstChild, el);
+  parent.removeChild(el);
+}
+function rename(el, tagName) {
+  const replacement = el.ownerDocument.createElement(tagName);
+  const align = readAlignment(el);
+  const href = el.tagName === "A" ? el.getAttribute("href") : null;
+  while (el.firstChild) replacement.appendChild(el.firstChild);
+  if (align) replacement.style.textAlign = align;
+  if (href) replacement.setAttribute("href", href);
+  el.parentNode?.replaceChild(replacement, el);
+  return replacement;
+}
+function sanitizeChildren(parent) {
+  for (const node of Array.from(parent.childNodes)) {
+    if (node.nodeType === Node.TEXT_NODE) continue;
+    if (node.nodeType !== Node.ELEMENT_NODE) {
+      parent.removeChild(node);
+      continue;
+    }
+    let el = node;
+    if (DROPPED_TAGS.has(el.tagName)) {
+      parent.removeChild(el);
+      continue;
+    }
+    sanitizeChildren(el);
+    const target = TAG_ALIASES[el.tagName] ?? el.tagName;
+    if (!ALLOWED_TAGS.has(target)) {
+      unwrap(el);
+      continue;
+    }
+    if (target !== el.tagName) el = rename(el, target);
+    stripAttributes(el);
+  }
+}
+function pruneEmptyNodes(root) {
+  for (const el of Array.from(root.querySelectorAll("strong, em, u, s, a"))) {
+    if (!el.textContent?.trim() && !el.querySelector("br")) el.remove();
+  }
+}
+function textOf(node) {
+  return (node.textContent || "").replace(/\u00a0/g, " ").trim();
+}
+function isHtmlEmpty$1(html) {
+  if (!html?.trim()) return true;
+  const probe = document.createElement("div");
+  probe.innerHTML = html;
+  return !textOf(probe);
+}
+function sanitizeHtml(html) {
+  if (!html?.trim()) return "";
+  const root = document.createElement("div");
+  root.innerHTML = html;
+  sanitizeChildren(root);
+  pruneEmptyNodes(root);
+  if (!textOf(root)) return "";
+  return root.innerHTML.trim();
+}
+
+const IDLE_STATE = {
+  bold: false,
+  italic: false,
+  underline: false,
+  bulletList: false,
+  numberList: false,
+  link: false,
+  align: "left",
+  block: "p"
+};
+const BLOCKS = ["p", "h1", "h2", "h3", "blockquote"];
+const ALIGN_COMMANDS = {
+  left: "justifyLeft",
+  center: "justifyCenter",
+  right: "justifyRight",
+  justify: "justifyFull"
+};
+function exec(command, value) {
+  try {
+    document.execCommand(command, false, value);
+  } catch {
+  }
+}
+function queryState(command) {
+  try {
+    return document.queryCommandState(command);
+  } catch {
+    return false;
+  }
+}
+function currentBlock() {
+  try {
+    const raw = (document.queryCommandValue("formatBlock") || "").toLowerCase();
+    if (raw === "div" || !raw) return "p";
+    return BLOCKS.includes(raw) ? raw : "p";
+  } catch {
+    return "p";
+  }
+}
+function currentAlign() {
+  if (queryState("justifyCenter")) return "center";
+  if (queryState("justifyRight")) return "right";
+  if (queryState("justifyFull")) return "justify";
+  return "left";
+}
+function closestLink(root) {
+  const node = document.getSelection()?.anchorNode;
+  if (!node || !root.contains(node)) return null;
+  const el = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+  return el?.closest("a") ?? null;
+}
+function sameState(a, b) {
+  return a.bold === b.bold && a.italic === b.italic && a.underline === b.underline && a.bulletList === b.bulletList && a.numberList === b.numberList && a.link === b.link && a.align === b.align && a.block === b.block;
+}
+const RichText_2View = ({
+  value,
+  placeholder = "Enter text...",
+  readOnly = false,
+  minHeight = 180,
+  interactive = true,
+  className,
+  style,
+  onContentChange,
+  onFocus,
+  onBlur
+}) => {
+  const rootRef = __mf_25(null);
+  const editorRef = __mf_25(null);
+  const appliedRef = __mf_25("");
+  const focusedRef = __mf_25(false);
+  const savedRangeRef = __mf_25(null);
+  const [empty, setEmpty] = __mf_26(() => isHtmlEmpty$1(value));
+  const [focused, setFocused] = __mf_26(false);
+  const [state, setState] = __mf_26(IDLE_STATE);
+  const editable = interactive && !readOnly;
+  const refreshState = __mf_17$1(() => {
+    const el = editorRef.current;
+    if (!el || !editable) return;
+    const next = {
+      bold: queryState("bold"),
+      italic: queryState("italic"),
+      underline: queryState("underline"),
+      bulletList: queryState("insertUnorderedList"),
+      numberList: queryState("insertOrderedList"),
+      link: !!closestLink(el),
+      align: currentAlign(),
+      block: currentBlock()
+    };
+    setState((prev) => sameState(prev, next) ? prev : next);
+  }, [editable]);
+  const applyValue = __mf_17$1((html) => {
+    const el = editorRef.current;
+    if (!el) return;
+    if (focusedRef.current) return;
+    if (html !== appliedRef.current || el.innerHTML !== html) {
+      el.innerHTML = html;
+      appliedRef.current = html;
+    }
+    setEmpty(isHtmlEmpty$1(html));
+  }, []);
+  __mf_20(() => {
+    applyValue(value || "");
+  }, [value, applyValue]);
+  __mf_20(() => {
+    if (!editable) return;
+    exec("defaultParagraphSeparator", "p");
+    exec("styleWithCSS", "false");
+  }, [editable]);
+  __mf_20(() => {
+    if (!editable) return;
+    const onSelectionChange = () => {
+      const el = editorRef.current;
+      const selection = document.getSelection();
+      if (!el || !selection?.rangeCount) return;
+      const range = selection.getRangeAt(0);
+      if (!el.contains(range.commonAncestorContainer)) return;
+      savedRangeRef.current = range.cloneRange();
+      refreshState();
+    };
+    document.addEventListener("selectionchange", onSelectionChange);
+    return () => document.removeEventListener("selectionchange", onSelectionChange);
+  }, [editable, refreshState]);
+  const emitChange = __mf_17$1(() => {
+    const el = editorRef.current;
+    if (!el || !editable) return;
+    const html = el.innerHTML;
+    appliedRef.current = html;
+    setEmpty(isHtmlEmpty$1(html));
+    onContentChange?.(html);
+  }, [editable, onContentChange]);
+  const focusEditor = __mf_17$1(() => {
+    const el = editorRef.current;
+    if (!el) return;
+    if (!el.contains(document.activeElement)) el.focus();
+    const range = savedRangeRef.current;
+    const selection = document.getSelection();
+    if (range && selection && el.contains(range.commonAncestorContainer)) {
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  }, []);
+  const runCommand = __mf_17$1(
+    (run) => {
+      if (!editable) return;
+      focusEditor();
+      run();
+      emitChange();
+      refreshState();
+    },
+    [editable, emitChange, focusEditor, refreshState]
+  );
+  const handleInput = __mf_17$1(() => {
+    emitChange();
+    refreshState();
+  }, [emitChange, refreshState]);
+  const handleFocusIn = __mf_17$1(() => {
+    if (!editable || focusedRef.current) return;
+    focusedRef.current = true;
+    setFocused(true);
+    refreshState();
+    onFocus?.();
+  }, [editable, onFocus, refreshState]);
+  const handleFocusOut = __mf_17$1(
+    (event) => {
+      if (!editable || !focusedRef.current) return;
+      const next = event.relatedTarget;
+      if (next && rootRef.current?.contains(next)) return;
+      focusedRef.current = false;
+      setFocused(false);
+      setState(IDLE_STATE);
+      const el = editorRef.current;
+      if (!el) return;
+      const html = sanitizeHtml(el.innerHTML);
+      if (el.innerHTML !== html) el.innerHTML = html;
+      appliedRef.current = html;
+      setEmpty(isHtmlEmpty$1(html));
+      onBlur?.(html);
+    },
+    [editable, onBlur]
+  );
+  const toggleLink = __mf_17$1(() => {
+    const el = editorRef.current;
+    if (!el) return;
+    runCommand(() => {
+      const existing = closestLink(el);
+      const url = window.prompt("Link URL", existing?.getAttribute("href") || "https://");
+      if (url === null) return;
+      const href = sanitizeUrl(url);
+      if (!href) {
+        exec("unlink");
+        return;
+      }
+      const selection = document.getSelection();
+      if (selection?.isCollapsed && !existing) {
+        exec("insertHTML", `<a href="${escapeHtml(href)}">${escapeHtml(href)}</a>`);
+      } else {
+        exec("createLink", href);
+      }
+    });
+  }, [runCommand]);
+  const keepSelection = (event) => {
+    event.preventDefault();
+  };
+  const toolbarDisabled = !editable;
+  const renderToggle = (label, icon, on, onActivate) => /* @__PURE__ */ __mf_1$1(
+    "button",
+    {
+      type: "button",
+      className: cn(styles$1.btn, on && styles$1.btnActive),
+      title: label,
+      "aria-label": label,
+      "aria-pressed": on,
+      disabled: toolbarDisabled,
+      onMouseDown: keepSelection,
+      onClick: onActivate,
+      children: icon
+    }
+  );
+  return (
+    // biome-ignore lint/a11y/useSemanticElements: a fieldset would not describe an editor shell
+    /* @__PURE__ */ __mf_2(
+      "div",
+      {
+        ref: rootRef,
+        className: cn(
+          styles$1.root,
+          focused && styles$1.rootFocused,
+          readOnly && styles$1.rootReadOnly,
+          className
+        ),
+        style: { ...style, minHeight },
+        role: "group",
+        "aria-label": "Rich text editor",
+        onFocus: handleFocusIn,
+        onBlur: handleFocusOut,
+        children: [
+          !readOnly && /* @__PURE__ */ __mf_2("div", { className: styles$1.toolbar, role: "toolbar", "aria-label": "Text formatting", children: [
+            /* @__PURE__ */ __mf_2("div", { className: styles$1.group, children: [
+              renderToggle(
+                "Bold",
+                /* @__PURE__ */ __mf_1$1(MdFormatBold, { size: 17 }),
+                state.bold,
+                () => runCommand(() => exec("bold"))
+              ),
+              renderToggle(
+                "Italic",
+                /* @__PURE__ */ __mf_1$1(MdFormatItalic, { size: 17 }),
+                state.italic,
+                () => runCommand(() => exec("italic"))
+              ),
+              renderToggle(
+                "Underline",
+                /* @__PURE__ */ __mf_1$1(MdFormatUnderlined, { size: 17 }),
+                state.underline,
+                () => runCommand(() => exec("underline"))
+              )
+            ] }),
+            /* @__PURE__ */ __mf_1$1("span", { className: styles$1.divider }),
+            /* @__PURE__ */ __mf_2(
+              "select",
+              {
+                className: styles$1.select,
+                "aria-label": "Paragraph style",
+                disabled: toolbarDisabled,
+                value: state.block,
+                onChange: (event) => {
+                  const block = event.target.value;
+                  runCommand(() => exec("formatBlock", block));
+                },
+                children: [
+                  /* @__PURE__ */ __mf_1$1("option", { value: "p", children: "Paragraph" }),
+                  /* @__PURE__ */ __mf_1$1("option", { value: "h1", children: "Heading 1" }),
+                  /* @__PURE__ */ __mf_1$1("option", { value: "h2", children: "Heading 2" }),
+                  /* @__PURE__ */ __mf_1$1("option", { value: "h3", children: "Heading 3" }),
+                  /* @__PURE__ */ __mf_1$1("option", { value: "blockquote", children: "Quote" })
+                ]
+              }
+            ),
+            /* @__PURE__ */ __mf_1$1("span", { className: styles$1.divider }),
+            /* @__PURE__ */ __mf_2("div", { className: styles$1.group, children: [
+              renderToggle(
+                "Bulleted list",
+                /* @__PURE__ */ __mf_1$1(MdFormatListBulleted, { size: 17 }),
+                state.bulletList,
+                () => runCommand(() => exec("insertUnorderedList"))
+              ),
+              renderToggle(
+                "Numbered list",
+                /* @__PURE__ */ __mf_1$1(MdFormatListNumbered, { size: 17 }),
+                state.numberList,
+                () => runCommand(() => exec("insertOrderedList"))
+              )
+            ] }),
+            /* @__PURE__ */ __mf_1$1("span", { className: styles$1.divider }),
+            /* @__PURE__ */ __mf_2("div", { className: styles$1.group, children: [
+              renderToggle("Insert link", /* @__PURE__ */ __mf_1$1(MdLink, { size: 17 }), state.link, toggleLink),
+              renderToggle(
+                "Remove link",
+                /* @__PURE__ */ __mf_1$1(MdLinkOff, { size: 17 }),
+                false,
+                () => runCommand(() => exec("unlink"))
+              )
+            ] }),
+            /* @__PURE__ */ __mf_1$1("span", { className: styles$1.divider }),
+            /* @__PURE__ */ __mf_2("div", { className: styles$1.group, children: [
+              renderToggle(
+                "Align left",
+                /* @__PURE__ */ __mf_1$1(MdFormatAlignLeft, { size: 17 }),
+                state.align === "left",
+                () => runCommand(() => exec(ALIGN_COMMANDS.left))
+              ),
+              renderToggle(
+                "Align center",
+                /* @__PURE__ */ __mf_1$1(MdFormatAlignCenter, { size: 17 }),
+                state.align === "center",
+                () => runCommand(() => exec(ALIGN_COMMANDS.center))
+              ),
+              renderToggle(
+                "Align right",
+                /* @__PURE__ */ __mf_1$1(MdFormatAlignRight, { size: 17 }),
+                state.align === "right",
+                () => runCommand(() => exec(ALIGN_COMMANDS.right))
+              ),
+              renderToggle(
+                "Justify",
+                /* @__PURE__ */ __mf_1$1(MdFormatAlignJustify, { size: 17 }),
+                state.align === "justify",
+                () => runCommand(() => exec(ALIGN_COMMANDS.justify))
+              )
+            ] })
+          ] }),
+          /* @__PURE__ */ __mf_1$1("div", { className: styles$1.surface, children: /* @__PURE__ */ __mf_1$1(
+            "div",
+            {
+              ref: editorRef,
+              className: cn(
+                styles$1.editor,
+                empty && styles$1.editorEmpty,
+                readOnly && styles$1.editorReadOnly
+              ),
+              contentEditable: editable,
+              suppressContentEditableWarning: true,
+              role: "textbox",
+              tabIndex: editable ? 0 : -1,
+              "aria-multiline": "true",
+              "aria-readonly": readOnly || void 0,
+              "aria-label": placeholder,
+              "data-placeholder": placeholder,
+              onInput: handleInput,
+              onKeyUp: refreshState,
+              onMouseUp: refreshState
+            }
+          ) })
+        ]
+      }
+    )
+  );
+};
+
+const PREVIEW_HTML = "<h2>Rich Text 2</h2><p>Hello <strong>world</strong> — edit <em>formatted</em> HTML and store it as a plain string.</p><ul><li>Headings, lists and links</li><li>Text alignment</li></ul>";
+const RichText_2Build = (props) => {
+  const {
+    connectors: { connect }
+  } = __mf_161();
+  const merged = { ...config$1.defaultProps, ...props };
+  return /* @__PURE__ */ __mf_1$1("div", { ref: connect, className: cn(props.className, props.classNames), style: props.style, children: /* @__PURE__ */ __mf_1$1(
+    RichText_2View,
+    {
+      value: PREVIEW_HTML,
+      placeholder: merged.placeholder ?? "Enter text...",
+      readOnly: merged.readOnly ?? false,
+      minHeight: merged.minHeight ?? 180,
+      interactive: false
+    }
+  ) });
+};
+
+const CHANGE_DEBOUNCE_MS$1 = 300;
+const RichText_2Render = (props) => {
+  const { style, className, classNames = [] } = props;
+  const merged = { ...config$1.defaultProps, ...props };
+  const { connect, emit } = __mf_180({ autoBindEvents: false });
+  const {
+    sources: { datasource: ds }
+  } = __mf_182();
+  const [value, setValue] = __mf_26("");
+  const valueRef = __mf_25("");
+  const writingRef = __mf_25(false);
+  const timerRef = __mf_25(null);
+  const clearTimer = __mf_17$1(() => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+  }, []);
+  __mf_20(() => clearTimer, [clearTimer]);
+  __mf_20(() => {
+    if (!ds) return;
+    let cancelled = false;
+    const listener = async () => {
+      if (writingRef.current) return;
+      const raw = await ds.getValue();
+      if (cancelled) return;
+      const html = sanitizeHtml(typeof raw === "string" ? raw : "");
+      if (html === valueRef.current) return;
+      valueRef.current = html;
+      setValue(html);
+    };
+    void listener();
+    ds.addListener("changed", listener);
+    return () => {
+      cancelled = true;
+      ds.removeListener("changed", listener);
+    };
+  }, [ds]);
+  const persist = __mf_17$1(
+    async (html) => {
+      const cleaned = sanitizeHtml(html);
+      if (cleaned === valueRef.current) return false;
+      valueRef.current = cleaned;
+      setValue(cleaned);
+      if (ds) {
+        writingRef.current = true;
+        try {
+          await ds.setValue(null, cleaned);
+        } finally {
+          queueMicrotask(() => {
+            writingRef.current = false;
+          });
+        }
+      }
+      return true;
+    },
+    [ds]
+  );
+  const handleContentChange = __mf_17$1(
+    (html) => {
+      clearTimer();
+      timerRef.current = setTimeout(() => {
+        timerRef.current = null;
+        void persist(html).then((changed) => {
+          if (changed) emit("onChange", { value: valueRef.current });
+        });
+      }, CHANGE_DEBOUNCE_MS$1);
+    },
+    [clearTimer, emit, persist]
+  );
+  const handleFocus = __mf_17$1(() => {
+    emit("onFocus", {});
+  }, [emit]);
+  const handleBlur = __mf_17$1(
+    (html) => {
+      clearTimer();
+      void persist(html).then((changed) => {
+        if (changed) emit("onChange", { value: valueRef.current });
+        emit("onBlur", { value: valueRef.current });
+      });
+    },
+    [clearTimer, emit, persist]
+  );
+  return /* @__PURE__ */ __mf_1$1("div", { ref: connect, className: cn(className, classNames), style, children: /* @__PURE__ */ __mf_1$1(
+    RichText_2View,
+    {
+      value,
+      placeholder: merged.placeholder ?? "Enter text...",
+      readOnly: merged.readOnly ?? false,
+      minHeight: merged.minHeight ?? 180,
+      onContentChange: handleContentChange,
+      onFocus: handleFocus,
+      onBlur: handleBlur
+    }
+  ) });
+};
+
+const RichText_2 = (props) => {
+  const { enabled } = __mf_160((state) => ({
+    enabled: state.options.enabled
+  }));
+  return enabled ? /* @__PURE__ */ __mf_1$1(RichText_2Build, { ...props }) : /* @__PURE__ */ __mf_1$1(RichText_2Render, { ...props });
+};
+RichText_2.craft = config$1.craft;
+RichText_2.info = config$1.info;
+RichText_2.defaultProps = config$1.defaultProps;
 
 const dataSettings = [
   {
@@ -6648,6 +7410,8 @@ const RichTextEditorRender = (props) => {
   const [value, setValue] = __mf_26("");
   const valueRef = __mf_25("");
   const writingRef = __mf_25(false);
+  const persistingRef = __mf_25(false);
+  const pendingRef = __mf_25(null);
   const debounceRef = __mf_25(null);
   const applyValue = __mf_17$1((next) => {
     const html = normalizeHtml(next);
@@ -6681,29 +7445,46 @@ const RichTextEditorRender = (props) => {
   }, []);
   const persist = __mf_17$1(
     async (html, emitChange) => {
-      const cleaned = cleanHtml(html);
-      const changed = cleaned !== valueRef.current;
-      valueRef.current = cleaned;
-      if (changed) setValue(cleaned);
-      if (ds && changed) {
-        writingRef.current = true;
-        try {
-          await ds.setValue(null, cleaned);
-        } finally {
-          queueMicrotask(() => {
-            writingRef.current = false;
-          });
+      const prevPending = pendingRef.current;
+      pendingRef.current = {
+        html,
+        emitChange: Boolean(prevPending?.emitChange || emitChange)
+      };
+      if (persistingRef.current) return;
+      persistingRef.current = true;
+      try {
+        while (pendingRef.current) {
+          const { html: nextHtml, emitChange: shouldEmit } = pendingRef.current;
+          pendingRef.current = null;
+          const cleaned = cleanHtml(nextHtml);
+          if (cleaned === valueRef.current) continue;
+          valueRef.current = cleaned;
+          setValue(cleaned);
+          if (ds) {
+            writingRef.current = true;
+            try {
+              await ds.setValue(null, cleaned);
+            } finally {
+              writingRef.current = false;
+            }
+          }
+          if (shouldEmit) {
+            emit("onChange", { value: cleaned });
+          }
         }
-      }
-      if (emitChange && changed) {
-        emit("onChange", { value: cleaned });
+      } finally {
+        persistingRef.current = false;
+        if (pendingRef.current) {
+          const leftover = pendingRef.current;
+          pendingRef.current = null;
+          void persist(leftover.html, leftover.emitChange);
+        }
       }
     },
     [ds, emit]
   );
   const handleContentChange = __mf_17$1(
     (html) => {
-      valueRef.current = html;
       if (debounceRef.current) clearTimeout(debounceRef.current);
       debounceRef.current = setTimeout(() => {
         void persist(html, true);
@@ -6756,7 +7537,8 @@ const components = {
   InvoiceLineGrid,
   KanbanBoard,
   ProgressGauge,
-  RichTextEditor
+  RichTextEditor,
+  RichText_2
 };
 
 export { components as default };

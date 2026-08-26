@@ -575,7 +575,46 @@
 			"props": {
 				"iterable": true,
 				"classNames": [],
-				"events": [],
+				"events": [
+					{
+						"type": "simple-action",
+						"id": "jJXNTdVhaiQdSoWhbkgGKL",
+						"events": [
+							"onselect"
+						],
+						"action": "copy",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "selectedProduct.Sale_Price",
+							"type": "scalar",
+							"namespace": "",
+							"from": "",
+							"dataType": "number",
+							"target": "lineDraft.Unit_Price",
+							"targetNamespace": "",
+							"targetType": "number"
+						}
+					},
+					{
+						"type": "simple-action",
+						"id": "tZiYJ5LcVFH95qMoh9qqCB",
+						"events": [
+							"onselect"
+						],
+						"action": "copy",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "selectedProduct.Tax_Rate",
+							"type": "scalar",
+							"namespace": "",
+							"from": "",
+							"dataType": "number",
+							"target": "lineDraft.Tax_Rate",
+							"targetNamespace": "",
+							"targetType": "unknown"
+						}
+					}
+				],
 				"template": "{{ length }} products",
 				"rowsNumber": 6,
 				"placeholder": "Select a product",
@@ -584,7 +623,11 @@
 				"style": {
 					"height": "44px",
 					"borderRadius": "12px",
-					"width": "100%"
+					"width": "100%",
+					"paddingLeft": "4px",
+					"paddingRight": "4px",
+					"paddingBottom": "4px",
+					"paddingTop": "4px"
 				}
 			},
 			"displayName": "Select Box",
@@ -607,7 +650,6 @@
 				"isFixedWidth": true,
 				"iterableChild": true,
 				"style": {
-					"height": "44px",
 					"display": "flex",
 					"alignItems": "center",
 					"gap": "8px",
@@ -617,16 +659,22 @@
 					"borderWidth": "1px",
 					"borderStyle": "solid",
 					"borderColor": "#d1d5db",
-					"backgroundColor": "#ffffff"
+					"backgroundColor": "#ffffff",
+					"marginBottom": "2px",
+					"marginRight": "2px",
+					"marginTop": "2px",
+					"marginLeft": "2px",
+					"height": "36px"
 				}
 			},
 			"displayName": "Stylebox",
 			"custom": {
-				"contentHeight": 44
+				"contentHeight": 36
 			},
 			"parent": "dlgSelectBox01",
 			"hidden": false,
 			"nodes": [
+				"hJf3B5Ioav",
 				"dlgSelectRef01",
 				"dlgSelectName01"
 			],
@@ -928,7 +976,8 @@
 				"classNames": [],
 				"revealPassword": true,
 				"twentyFourHours": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"intervals": []
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1118,7 +1167,8 @@
 				"classNames": [],
 				"revealPassword": true,
 				"twentyFourHours": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"intervals": []
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1173,7 +1223,7 @@
 						"targetDialog": "addLine"
 					}
 				],
-				"iconPosition": "left",
+				"iconPosition": "hidden",
 				"style": {
 					"display": "flex",
 					"backgroundColor": "#ffffff",
@@ -1267,7 +1317,7 @@
 						]
 					}
 				],
-				"iconPosition": "left",
+				"iconPosition": "hidden",
 				"style": {
 					"display": "flex",
 					"backgroundColor": "#6E56CF",
@@ -1300,7 +1350,8 @@
 			"isCanvas": false,
 			"props": {
 				"classNames": [],
-				"events": []
+				"events": [],
+				"icon": "fa-regular fa-star"
 			},
 			"displayName": "Icon",
 			"custom": {},
@@ -1316,11 +1367,35 @@
 			"isCanvas": false,
 			"props": {
 				"classNames": [],
-				"events": []
+				"events": [],
+				"icon": "fa-regular fa-star"
 			},
 			"displayName": "Icon",
 			"custom": {},
 			"parent": "dlgValidateBtn01",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"hJf3B5Ioav": {
+			"type": {
+				"resolvedName": "Image"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"style": {
+					"borderRadius": "50%",
+					"width": "28px",
+					"height": "28px"
+				},
+				"id": "image",
+				"datasource": "$This.Picture"
+			},
+			"displayName": "Image",
+			"custom": {},
+			"parent": "dlgSelectContainer01",
 			"hidden": false,
 			"nodes": [],
 			"linkedNodes": {}

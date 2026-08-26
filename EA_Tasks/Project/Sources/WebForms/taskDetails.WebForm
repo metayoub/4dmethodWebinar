@@ -41,6 +41,34 @@
 				"dataclass": "Task",
 				"initialValue": "",
 				"depth": null
+			},
+			{
+				"id": "percent",
+				"type": "scalar",
+				"namespace": "",
+				"dataType": "number",
+				"initialValue": 0,
+				"events": [
+					{
+						"type": "simple-action",
+						"id": "percentCopyToTaskPercent",
+						"events": [
+							"onChange"
+						],
+						"action": "copy",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "percent",
+							"type": "scalar",
+							"namespace": "",
+							"from": "",
+							"dataType": "number",
+							"target": "task.Percent",
+							"targetNamespace": "",
+							"targetType": "number"
+						}
+					}
+				]
 			}
 		],
 		"styles": []
@@ -72,92 +100,9 @@
 			"hidden": false,
 			"nodes": [
 				"UAvnPiUNzt",
-				"N70S6IuLpq"
+				"2RXwTNOkQY",
+				"j5Xp4D1J8z"
 			],
-			"linkedNodes": {}
-		},
-		"N70S6IuLpq": {
-			"type": {
-				"resolvedName": "RichTextEditor"
-			},
-			"isCanvas": false,
-			"props": {
-				"name": "",
-				"classNames": [],
-				"events": [
-					{
-						"type": "qodly-pro-action",
-						"id": "sUUKbewBHy4zxtDq74G7Mz",
-						"events": [
-							"onchange"
-						],
-						"actionType": "4d-method",
-						"action": "",
-						"method": "updateDescription",
-						"params": [
-							{
-								"id": "9LZ29L4Buu9a4nq9uhjgYu",
-								"type": "variant",
-								"datasource": "task.Description"
-							}
-						]
-					}
-				],
-				"placeholder": "Enter text...",
-				"readOnly": false,
-				"minHeight": "150px",
-				"style": {
-					"minHeight": "150px"
-				},
-				"datasource": "task.Description"
-			},
-			"displayName": "Rich Text Editor",
-			"custom": {},
-			"parent": "ROOT",
-			"hidden": false,
-			"nodes": [],
-			"linkedNodes": {}
-		},
-		"dhka9vpKqj": {
-			"type": {
-				"resolvedName": "ProgressGauge"
-			},
-			"isCanvas": false,
-			"props": {
-				"name": "",
-				"classNames": [],
-				"events": [
-					{
-						"type": "qodly-pro-action",
-						"id": "sYAGZEHpmZGYWLuGJr3Dre",
-						"events": [
-							"onValueChange"
-						],
-						"actionType": "4d-method",
-						"action": "",
-						"method": "updatePercent",
-						"params": [
-							{
-								"id": "vMjmrYNBY2Lr442wfx5c3G",
-								"type": "variant",
-								"datasource": "task.Percent"
-							}
-						]
-					}
-				],
-				"readOnly": false,
-				"strokeWidth": 14,
-				"style": {
-					"width": "120px",
-					"height": "120px"
-				},
-				"datasource": "task.Percent"
-			},
-			"displayName": "Progress Gauge",
-			"custom": {},
-			"parent": "UAvnPiUNzt",
-			"hidden": false,
-			"nodes": [],
 			"linkedNodes": {}
 		},
 		"UAvnPiUNzt": {
@@ -178,9 +123,93 @@
 			"custom": {},
 			"parent": "ROOT",
 			"hidden": false,
-			"nodes": [
-				"dhka9vpKqj"
-			],
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"2RXwTNOkQY": {
+			"type": {
+				"resolvedName": "ProgressGauge"
+			},
+			"isCanvas": false,
+			"props": {
+				"name": "",
+				"classNames": [],
+				"events": [
+					{
+						"type": "qodly-pro-action",
+						"id": "roM526ikTsfGxeMCh9EpE1",
+						"events": [
+							"onValueChange"
+						],
+						"actionType": "4d-method",
+						"action": "",
+						"params": [
+							{
+								"id": "kXbD1VefzAznQdj6wpXWnD",
+								"type": "variant",
+								"datasource": "task.Percent"
+							}
+						],
+						"method": "updatePercent"
+					}
+				],
+				"readOnly": false,
+				"strokeWidth": 14,
+				"style": {
+					"width": "160px",
+					"height": "160px"
+				},
+				"datasource": "task.Percent"
+			},
+			"displayName": "Progress Gauge",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"j5Xp4D1J8z": {
+			"type": {
+				"resolvedName": "RichText_2"
+			},
+			"isCanvas": false,
+			"props": {
+				"name": "",
+				"classNames": [],
+				"events": [
+					{
+						"type": "qodly-pro-action",
+						"id": "2oADgrsCjtVwjMW23mSoCz",
+						"events": [
+							"onChange"
+						],
+						"actionType": "4d-method",
+						"action": "",
+						"method": "updateDescription",
+						"returns": {},
+						"params": [
+							{
+								"id": "3fy7hwBpwFVPcRabBgPeLf",
+								"type": "variant",
+								"datasource": "task.Description"
+							}
+						]
+					}
+				],
+				"placeholder": "Enter text...",
+				"readOnly": false,
+				"minHeight": 180,
+				"style": {
+					"width": "100%",
+					"minHeight": "180px"
+				},
+				"datasource": "task.Description"
+			},
+			"displayName": "Rich Text 2",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
 			"linkedNodes": {}
 		}
 	}

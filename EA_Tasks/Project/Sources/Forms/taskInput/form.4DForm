@@ -246,13 +246,14 @@
 					"width": 135,
 					"height": 15,
 					"dataSource": "Form:C1466.ent.Percent",
-					"continuousExecution": false,
+					"continuousExecution": true,
 					"max": 100,
 					"graduationStep": 5,
 					"step": 5,
 					"method": "ObjectMethods/progressBar.4dm",
 					"events": [
-						"onClick"
+						"onClick",
+						"onDataChange"
 					]
 				},
 				"percentField": {

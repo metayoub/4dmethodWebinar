@@ -12,6 +12,7 @@ Case of
 		WA OPEN URL:C1020(WA; $url)
 		$context:=ds:C1482.Task  //.new()
 		WA SET CONTEXT:C1848(WA; $context)
+		WA SET PREFERENCE:C1041(WA; WA enable Web inspector:K62:7; True)
 		
 	: (Form event code:C388=On End URL Loading:K2:47)
 		// Dialog: timer on this form. Subform: parent timer (SET TIMER does not work in subforms).
